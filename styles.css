@@ -248,6 +248,47 @@ main {
   font-size: 2rem;
 }
 
+/* ------------------------------------------------------------------ BANNER ENVIO ------------------------------------------------------------------ */
+
+.banner-envio {
+  background-color: #e188e0;
+  color: white;
+  padding: 10px 0;
+}
+
+.banner-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.banner-texto img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
+
+.seccion-productos {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-productos {
+  text-align: center;
+}
+
+.titulo-productos {
+  font-family: 'Condiment', cursive;
+  color: #fff;
+  font-size: 4rem;
+}
+
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
 
 footer {
