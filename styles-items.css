@@ -220,6 +220,14 @@ main {
 
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
 
+.producto-imagen-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+  gap: 40px;
+}
+
 .producto-contenedor {
   display: flex;
   flex-direction: row;
@@ -227,7 +235,7 @@ main {
   justify-content: center;
   gap: 40px;
   padding: 40px 0;
-  margin-top: 70px
+  margin-top: 80px
 }
 
 .producto-imagen {
@@ -246,11 +254,26 @@ main {
   border-radius: 20px;
 }
 
+.producto-descripcion-titulo {
+  font-family: 'Carattere', cursive;
+  color: #FFFFFF;
+  font-size: 5rem;
+  margin-bottom: -40px;
+}
+
+.medidas-talle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
 .producto-detalles {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #1f1e1e;
   padding: 30px;
   border-radius: 20px;
   color: #fff;
@@ -259,14 +282,11 @@ main {
 }
 
 .producto-titulo {
-  font-family: 'Condiment', cursive;
+  font-family: 'Carattere', cursive;
   font-size: 5rem;
 }
 
-.producto-descripcion {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-}
+
 
 .producto-precio {
   font-family: 'Montserrat', sans-serif;
@@ -285,9 +305,16 @@ main {
   gap: 8px;
 }
 
+.producto-anuncio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
 .botones-talle {
   display: flex;
   gap: 12px;
+  margin-bottom: 30px;
 }
 
 .boton-talle {

@@ -236,13 +236,13 @@ main {
 }
 
 .texto-superior {
-  font-family: 'Condiment', cursive;
+  font-family: 'Carattere', cursive;
   color: #fff;
-  font-size: 11rem;
+  font-size: 15rem;
 }
 
 .texto-inferior {
-  margin-top: -80px;
+  margin-top: -100px;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: 2rem;
@@ -280,12 +280,12 @@ main {
 }
 
 .titulo-productos {
-  font-family: 'Condiment', cursive;
+  font-family: 'Carattere', static;
   color: #fff;
-  font-size: 7rem;
+  font-size: 8rem;
   display: block;
   text-align: center;
-  margin-bottom: 40px; 
+  margin-bottom: 0px; 
 }
 
 .productos-contenedor {
@@ -369,7 +369,6 @@ main {
   align-items: center;
   justify-content: center;
   gap: 8px;
-
 }
 
 .btn {  
