@@ -4,21 +4,24 @@ const productos = [
     precio: "$21.990,00",
     anuncio: "3 cuotas sin interés de $7.330,00",
     primeraImg: "img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio1.jpg",
-    segundaImg: "img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio2.jpg"
+    segundaImg: "img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio2.jpg",
+    redireccionPagina: "remera9deJulio.html"
   },
   {
     nombre: "Remera Corrientes",
     precio: "$21.990,00",
     anuncio: "3 cuotas sin interés de $7.330,00",
     primeraImg: "img/presentacion-remeras/remera-corrientes/remera-corrientes1.jpg",
-    segundaImg: "img/presentacion-remeras/remera-corrientes/remera-corrientes2.jpg"
+    segundaImg: "img/presentacion-remeras/remera-corrientes/remera-corrientes2.jpg",
+    redireccionPagina: "remeraCorrientes.html"
   },
   {
     nombre: "Remera Gaona",
     precio: "$21.990,00",
     anuncio: "3 cuotas sin interés de $7.330,00",
     primeraImg: "img/presentacion-remeras/remera-gaona/remera-gaona1.jpg",
-    segundaImg: "img/presentacion-remeras/remera-gaona/remera-gaona2.jpg"
+    segundaImg: "img/presentacion-remeras/remera-gaona/remera-gaona2.jpg",
+    redireccionPagina: "remeraGaona.html"
   }
 ];
 
@@ -39,7 +42,7 @@ productos.forEach(producto => {
             ${producto.anuncio ? `<span class="anuncio-producto">${producto.anuncio}</span>` : ''}
         </div>
         <div class="botones-producto">
-            <button class="btn btn-comprar">Comprar</button>
+            <a href="${producto.redireccionPagina}" class="btn btn-comprar">Comprar</a>
             <button class="btn btn-ver">Ver</button>
         </div>
       </div>
