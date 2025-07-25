@@ -273,55 +273,121 @@ main {
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
 
 .seccion-productos {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contenedor-productos {
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .titulo-productos {
   font-family: 'Condiment', cursive;
   color: #fff;
   font-size: 7rem;
-  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  margin-bottom: 40px; 
+}
+
+.productos-contenedor {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .producto {
-  background-color: #1f1e1e;
-  border-radius: 30px;
   width: 250px;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  overflow: hidden;
 }
 
-.producto .nombre-producto {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  font-size: 1.2rem;
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-.producto .precio-producto {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  padding-left: 20px;
-}
-
-.producto img {
+.imagen-producto {
+  position: relative;
   width: 100%;
   height: auto;
+}
+
+.imagen-producto img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px 20px 0 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imagen-producto:hover .img-hover {
+  opacity: 1;
+}
+
+.imagen-producto:hover .img-default {
+  opacity: 0;
+}
+
+.info-producto {
+  width: 100%;
+  height: auto;
+  background-color: #0f0f0f;
+  border-left: 1px solid #464545;
+  border-right: 1px solid #464545;
+  border-bottom: 1px solid #464545;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.nombre-producto,
+.precio-producto {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.precio-producto {
+  font-weight: bold;
+}
+
+.anuncio-producto {  
+  font-family: 'Montserrat', sans-serif;
+  color: #e188e0;
+  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+}
+.btn {  
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 100px; 
+  text-align: center;
+  display: inline-block;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  padding: 10px 0;
   border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1f1e1e;
 }
 
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
