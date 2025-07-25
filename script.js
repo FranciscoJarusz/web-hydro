@@ -10,3 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+let cantidad = 1;
+
+document.querySelector('.btn-menos').addEventListener('click', () => {
+    if (cantidad > 1) {
+        cantidad--;
+        document.getElementById('cantidad').textContent = cantidad;
+    }
+});
+
+document.querySelector('.btn-mas').addEventListener('click', () => {
+    cantidad++;
+    document.getElementById('cantidad').textContent = cantidad;
+});
