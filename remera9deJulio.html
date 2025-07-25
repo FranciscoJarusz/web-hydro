@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles-items.css">
+
+    <title>Remera 9 de Julio - Hydro</title>
+
+    <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
+
+    <!--------------------------------------------------- ICONOS --------------------------------------------------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!--------------------------------------------------- FUENTES --------------------------------------------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Condiment&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="header-conteiner">
+
+        <header>
+            
+            <div class="general-conteiner">
+            
+                <div class="logo">
+
+                    <a href="index.html">
+                        <img src="img/whitelogo_hydro.png" alt="Logo" class="logo-img">
+                    </a>
+                    
+                </div>
+
+                <div class="usuario">
+
+                    <i class="fas fa-user" alt="Usuario"></i>
+                    
+                </div>
+                
+                <div class="carro-compra">
+
+                    <i class="fas fa-shopping-cart" alt="Carrito de compra"></i>
+                    
+                </div>
+
+                <div class="barra-busqueda">
+
+                    <form class="formulario-busqueda" action="/buscar" method="GET">
+
+                        <input type="text" name="q" placeholder="¿Qué estas buscando?" class="input-busqueda">
+
+                            <button type="submit" class="boton-busqueda">
+                                <i class="fas fa-search" alt="Boton de búsqueda"></i>
+                            </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+
+    <main>
+
+        <div class="banner-envio">
+
+            <div class="banner-texto">
+
+                <img class="logo-hydro" src="/img/whitelogo_hydro.png"></img>
+                <span>Envíos gratis a partir de $100.000</span>
+                
+            </div>
+
+        </div>
+
+        <div class="producto-contenedor">
+
+        <div class="producto-imagen-wrapper">
+
+            <div class="producto-imagen">
+                <img src="img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio2.jpg" alt="Remera 9 de Julio" class="imagen-producto">
+            </div>
+
+            <span class="producto-descripcion-titulo">Descripción</span>
+
+            <div class="medidas-talle">
+                <span class="producto-descripcion">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quisquam aut dolore aliquam, ratione corrupti aspernatur quod atque cum nemo quibusdam.</span><br>
+                <span class="producto-descripcion">Talle 1: largo 66cm - ancho 59cm</span><br>
+                <span class="producto-descripcion">Talle 2: largo 67cm - ancho 64cm</span>
+            </div>
+            
+        </div>
+
+            <div class="producto-detalles">
+
+                <div class="producto-categoria">
+
+                    <a href="index.html">Inicio</a>
+                    <span>></span>
+                    <a href="remera9deJulio.html">Remera 9 de Julio</a>
+
+                </div>
+
+                <span class="producto-titulo">Remera 9 de Julio</span>
+
+                <span class="producto-precio">$21.990,00</span>
+
+                <div class="anuncio-producto">
+                    <i class="fas fa-credit-card"></i>
+                    <span>3 cuotas sin interés de $7.330,00</span>
+                </div>
+
+                <span class="producto-anuncio">15% de descuento pagando con transferencia</span>    
+
+                <span class="talle-titulo">Talle: <span id="talle-seleccionado">1</span></span>
+                <div class="botones-talle">
+                    <button class="boton-talle">1</button>
+                    <button class="boton-talle">2</button>
+                </div>
+
+                <div class="botones-contenedor">
+
+                    <div class="cantidad-selector">
+                        <button class="btn-menos">−</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-mas">+</button>
+                    </div>
+
+                    <button class="boton-agregar">Agregar al carrito</button>
+                    
+                </div>
+
+                <div class="devolucion-producto">
+
+                    <div class="devolucion-titulo">
+                        <i class="fas fa-undo"></i>
+                        <span class="devolucion-titulo-texto">Cambios y devoluciones</span>
+                    </div>
+                    
+                    <span class="devolucion-descripcion">
+                        Tenes hasta 15 días desde que lo recibís para hacer el cambio de la prenda.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>     
+
+    </main>
+
+    <footer id="contacto">
+
+      <div class="footer-contenedor">
+
+        <div class="footer-item">
+
+            <a href="https://www.instagram.com/hydro.arg/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+        </div>
+
+        <div class="copyright">
+          <p>© 2025. HYDRO.</p>
+        </div>
+
+      </div>
+
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

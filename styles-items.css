@@ -343,7 +343,6 @@ main {
 }
 
 .botones-contenedor {
-  width: 475px;
   display: flex;
   gap: 10px;
   align-items: center;
