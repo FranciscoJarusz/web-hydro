@@ -152,7 +152,7 @@ main {
   border-radius: 1000px;
   padding: 12px 12px;
   margin: 20px auto;
-  width: 500px;
+  width: 800px;
 }
 
 .formulario-busqueda {
@@ -420,38 +420,6 @@ main {
 
 .producto-categoria a:visited {
   color: #fff;
-}
-
-.devolucion-producto {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px 0px;
-  border-radius: 16px;
-  text-wrap: balance;
-  color: #fff;
-  max-width: 500px;
-}
-
-.devolucion-titulo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.devolucion-titulo-texto {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.devolucion-descripcion {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  color: #fff;
-  margin-left: 30px;
 }
 
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
