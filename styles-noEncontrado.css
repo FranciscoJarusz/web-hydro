@@ -139,6 +139,10 @@ main {
   background-color: #1f1e1e;
 }
 
+.usuario i, .carro-compra i {
+  color: white;
+}
+
 /* ------------------------------------------------------------------ BARRA DE BÚSQUEDA ------------------------------------------------------------------ */
 
 .barra-busqueda {
@@ -249,7 +253,7 @@ main {
 
 .producto-categoria a:hover,
 .producto-categoria a:visited:hover {
-  color: #464545;
+  color: #e188e0;
 }
 
 .producto-categoria a:visited {
@@ -428,4 +432,18 @@ footer#contacto {
 footer .copyright {
   font-size: 0.9em;
   color: #FFFFFF;
+}
+
+.hecho-por a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hecho-por a:hover,
+.hecho-por a:visited:hover {
+  color: #e188e0;
+}
+
+.hecho-por a:visited {
+  color: #fff;
 }

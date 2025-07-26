@@ -5,9 +5,9 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles-noEncontrado.css">
+    <link rel="stylesheet" href="styles-crearCuenta.css">
 
-    <title>No encontrado - Hydro</title>
+    <title>Crear cuenta - Hydro</title>
 
     <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
 
@@ -87,56 +87,60 @@
 
         </div>
 
-        <div class="producto-contenedor">    
+        <div class="inicioS-contenedor">    
 
-            <div class="producto-detalles">
+            <div class="inicioS-detalles">
 
-                <div class="producto-categoria">
+                <div class="inicioS-categoria">
 
                     <a href="index.html">Inicio</a>
                     <span>></span>
-                    <span>Resultados de búsqueda</span>
+                    <a href="usuarioPage.html">Mi cuenta</a>
+                    <span>></span>
+                    <span>Crear cuenta</span>
 
-                </div>
+                </div> 
 
-                <div class="mensaje-no-encontrado">
+                <span class="titulo-inicioS">Crear cuenta</span>
 
-                    <span id="mensaje-busqueda"></span>
-                    <p>Escribilo de otra forma y volvé a intentar.</p>
+                <form class="formulario-inicio" id="formLogin">
 
-                </div>
+                    <label for="nombre-apellido">Nombre y apellido</label>
+                    <input type="text" id="nombre-apellido" name="nombreApellido" placeholder="Ej: Francisco Jarusz" required>
 
-            </div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ej: tuemail@gmail.com" required>
 
-            <div class="seccion-productos">
+                    <label for="telefono">Número de teléfono (opcional)</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 11 23445567">
 
-                <div class="contenedor-productos">
-
-                    <span class="titulo-productos">Sugerencias</span>
-
-                    <div class="productos-contenedor" id="productos-contenedor">
-
-                        <!-- Aca se ponen los productos -->
-
+                    <label for="contrasena">Contraseña</label>
+                    <div class="campo-contrasena">
+                        <div class="input-con-icono">
+                        <input type="password" id="crear-contrasena" name="contrasena" placeholder="Ej: tucontraseña" required>
+                        <i id="crear-vistaContrasena" class="fas fa-eye-slash"></i>
+                        </div>
                     </div>
 
-                </div>
+                    <label for="confirmar">Confirmar contraseña</label>
+                    <div class="campo-contrasena">
+                        <div class="input-con-icono">
+                        <input type="password" id="crear-confirmar" name="confirmar" placeholder="Repetí tu contraseña" required>
+                        <i id="crear-vistaConfirmar" class="fas fa-eye-slash"></i>
+                        </div>
+                    </div>
+
+                    <p id="errorConfirmacion" style="color: red; display: none; font-size: 0.8rem;">
+                        Las contraseñas no coinciden.
+                    </p>
+
+                    <button type="submit">Crear cuenta</button>
+                    
+                </form>
 
             </div>
 
         </div>
-
-        <script>
-        const termino = localStorage.getItem("terminoBusqueda");
-        const mensaje = document.getElementById("mensaje-busqueda");
-
-        if (termino) {
-            mensaje.textContent = `No encontramos nada para "${termino}"`;
-            localStorage.removeItem("terminoBusqueda");
-        } else {
-            mensaje.textContent = "No se encontró el producto buscado.";
-        }
-        </script>
 
     </main>
 
@@ -162,8 +166,7 @@
     </footer>
 
 <script src="js/busqueda.js"></script>    
-<script src="js/product-card.js"></script>
-<script src="js/script.js"></script>
+<script src="js/contraseña.js"></script>  
 
 </body>
 

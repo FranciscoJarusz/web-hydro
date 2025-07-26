@@ -139,6 +139,10 @@ main {
   background-color: #1f1e1e;
 }
 
+.usuario i, .carro-compra i {
+  color: white;
+}
+
 /* ------------------------------------------------------------------ BARRA DE BÚSQUEDA ------------------------------------------------------------------ */
 
 .barra-busqueda {
@@ -220,115 +224,111 @@ main {
 
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
 
-.producto-imagen-wrapper {
+.inicioS-contenedor {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 600px;
-  gap: 40px;
-}
-
-.producto-contenedor {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
   gap: 40px;
   padding: 40px 0;
-  margin-top: 80px
+  margin-top: 80px;
+  max-width: 800px;
+  margin-left: 305px; 
 }
 
-.producto-imagen {
-  position: relative;
-  width: 600px;
-  height: 800px;
+.inicioS-detalles {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.imagen-producto {
+  flex-direction: column;
+  padding: 0;
+  border-radius: 20px;
+  color: #fff;
+  gap: 20px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
 }
 
-.producto-descripcion-titulo {
-  font-family: 'Carattere', cursive;
-  color: #FFFFFF;
-  font-size: 5rem;
-  margin-bottom: -40px;
-}
-
-.medidas-talle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-.tips-contenedor {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-.producto-detalles {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 30px;
-  border-radius: 20px;
-  color: #fff;
-  gap: 10px;
-  min-width: 250px;
-}
-
-.producto-titulo {
-  font-family: 'Carattere', cursive;
-  font-size: 5rem;
-  margin-bottom: -20px;
-}
-
-.producto-precio {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.anuncio-producto {  
-  font-family: 'Montserrat', sans-serif;
-  color: #e188e0;
-  font-size: 1rem;
-  font-weight: bold;
-  display: inline-flex;
+.inicioS-categoria a, .inicioS-categoria span {
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  font-size: 0.7rem;
+  color: #fff;
+  text-decoration: none;
 }
 
-.producto-anuncio {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  margin-bottom: 30px;
+.inicioS-categoria a:hover,
+.inicioS-categoria a:visited:hover {
+  color: #e188e0;
 }
 
-.botones-talle {
+.inicioS-categoria a:visited {
+  color: #fff;
+}
+
+.titulo-inicioS {
+  font-family: 'Carattere', cursive;
+  color: white;
+  font-size: 6rem;
+}
+
+.formulario-inicio {
   display: flex;
-  gap: 12px;
-  margin-bottom: 30px;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 420px;
+  margin-top: 20px;
 }
 
-.boton-talle {
+.formulario-inicio label {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.formulario-inicio input {
+  padding: 10px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  color: white;
+}
+
+.input-con-icono {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-con-icono input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border-radius: 20px;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  color: white;
+}
+
+.input-con-icono i {
+  position: absolute;
+  right: 15px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.input-con-icono i.activo {
+  color: #e188e0;
+}
+.formulario-inicio input::placeholder {
+  color: #464545;
+}
+
+.formulario-inicio input:focus {
+  outline: none;
+  border: 1px solid #e188e0;
+}
+
+.formulario-inicio button {
   font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
   font-size: 0.9rem;
   font-weight: bold;
-  width: 100px; 
+  width: 420px; 
   text-align: center;
   display: inline-block;
   background-color: #0f0f0f;
@@ -339,87 +339,30 @@ main {
   transition: none;
 }
 
-.boton-talle.activo {
+.formulario-inicio button:hover {
+  background-color: #1f1e1e;
+}
+
+.formulario-inicio button:active {
   background-color: #e188e0;
-  color: #fff;
 }
 
-.boton-talle:not(.activo):hover {
-  background-color: #1f1e1e;
-  color: #fff;
-}
-
-.botones-contenedor {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.cantidad-selector {
-  width: 200px;
-  display: flex;
-  align-items: center;  
-  justify-content: space-between;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;  
-  border-radius: 20px;
-  padding: 5px 10px;
-  color: #fff;
-}
-
-.cantidad-selector button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.cantidad {
-  width: 30px;
-  text-align: center;
-  font-size: 16px;
-}
-
-.cantidad-selector button:hover {
+.olvidar-contraseña a,
+.olvidar-contraseña a:visited {
   color: #e188e0;
-}
-
-.boton-agregar {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
-  font-size: 0.9rem;
-  font-weight: bold;
-  width: 300px; 
-  text-align: center;
-  display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.boton-agregar:hover {
-  background-color: #1f1e1e;
-}
-
-.producto-categoria a, .producto-categoria span {
-  align-items: center;
   font-size: 0.7rem;
-  color: #fff;
   text-decoration: none;
 }
 
-.producto-categoria a:hover,
-.producto-categoria a:visited:hover {
-  color: #464545;
+.crear-cuenta {
+  font-size: 0.7rem;
+  color: #fff;
 }
 
-.producto-categoria a:visited {
-  color: #fff;
+.crear-cuenta a,
+.crear-cuenta a:visited {
+  color: #e188e0;
+  text-decoration: none;
 }
 
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
@@ -458,4 +401,18 @@ footer#contacto {
 footer .copyright {
   font-size: 0.9em;
   color: #FFFFFF;
+}
+
+.hecho-por a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hecho-por a:hover,
+.hecho-por a:visited:hover {
+  color: #e188e0;
+}
+
+.hecho-por a:visited {
+  color: #fff;
 }

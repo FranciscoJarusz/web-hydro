@@ -5,9 +5,9 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles-noEncontrado.css">
+    <link rel="stylesheet" href="styles-usuario.css">
 
-    <title>No encontrado - Hydro</title>
+    <title>Usuario - Hydro</title>
 
     <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
 
@@ -87,56 +87,50 @@
 
         </div>
 
-        <div class="producto-contenedor">    
+        <div class="inicioS-contenedor">    
 
-            <div class="producto-detalles">
+            <div class="inicioS-detalles">
 
-                <div class="producto-categoria">
+                <div class="inicioS-categoria">
 
                     <a href="index.html">Inicio</a>
                     <span>></span>
-                    <span>Resultados de búsqueda</span>
+                    <a href="usuarioPage.html">Mi cuenta</a>
+                    <span>></span>
+                    <span>Iniciar Sesión</span>
 
-                </div>
+                </div> 
 
-                <div class="mensaje-no-encontrado">
+                <span class="titulo-inicioS">Iniciar Sesión</span>
 
-                    <span id="mensaje-busqueda"></span>
-                    <p>Escribilo de otra forma y volvé a intentar.</p>
+                <form class="formulario-inicio" id="formLogin">
+                
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="Ej: tuemail@gmail.com" required>
 
-                </div>
-
-            </div>
-
-            <div class="seccion-productos">
-
-                <div class="contenedor-productos">
-
-                    <span class="titulo-productos">Sugerencias</span>
-
-                    <div class="productos-contenedor" id="productos-contenedor">
-
-                        <!-- Aca se ponen los productos -->
-
+                    <label for="login-contrasena">Contraseña</label>
+                    <div class="campo-contrasena">
+                        <div class="input-con-icono">
+                            <input id="login-contrasena" type="password" placeholder="Ej: tucontraseña" required>
+                            <i id="vistaContrasena" class="fas fa-eye-slash"></i>
+                        </div>
                     </div>
 
-                </div>
+                    <span class="olvidar-contraseña">
+                        <a href="olvidarContraseña.html">¿Has olvidado tu contraseña?</a>
+                    </span>
+
+                    <button type="submit">Iniciar Sesión</button>
+
+                    <span class="crear-cuenta">
+                        ¿No tenés cuenta aún? <a href="crearCuenta.html">Crear cuenta</a>
+                    </span>
+                    
+                </form>
 
             </div>
 
         </div>
-
-        <script>
-        const termino = localStorage.getItem("terminoBusqueda");
-        const mensaje = document.getElementById("mensaje-busqueda");
-
-        if (termino) {
-            mensaje.textContent = `No encontramos nada para "${termino}"`;
-            localStorage.removeItem("terminoBusqueda");
-        } else {
-            mensaje.textContent = "No se encontró el producto buscado.";
-        }
-        </script>
 
     </main>
 
@@ -162,8 +156,7 @@
     </footer>
 
 <script src="js/busqueda.js"></script>    
-<script src="js/product-card.js"></script>
-<script src="js/script.js"></script>
+<script src="js/contraseña.js"></script>  
 
 </body>
 

@@ -195,65 +195,14 @@ main {
   color: #ffffff;
 }
 
-/* ------------------------------------------------------------------ IMÁGEN PRINCIPAL ------------------------------------------------------------------ */
-
-.imagen-fondo {
-  width: 100%;
-  height: 60vh;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.imagen-fondo::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 1;
-}
-
-.imagen-recortada {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  position: absolute;
-  top: 0; left: 0;
-  z-index: 0;
-  user-select: none;
-  pointer-events: none;
-}
-
-.contenedor-texto {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.texto-superior {
-  font-family: 'Carattere', cursive;
-  color: #fff;
-  font-size: 15rem;
-}
-
-.texto-inferior {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  font-size: 2rem;
-}
-
 /* ------------------------------------------------------------------ BANNER ENVIO ------------------------------------------------------------------ */
 
 .banner-envio {
+  position: fixed;
+  top: 104px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   background-color: #e188e0;
   color: white;
   padding: 10px 0;
@@ -275,123 +224,134 @@ main {
 
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
 
-.seccion-productos {
-  padding: 40px;
+.inicioS-contenedor {
   display: flex;
   flex-direction: column;
+  gap: 40px;
+  padding: 40px 0;
+  margin-top: 80px;
+  max-width: 800px;
+  margin-left: 305px; 
+}
+
+.inicioS-detalles {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 20px;
+  color: #fff;
+  gap: 20px;
+  width: 100%;
+}
+
+.inicioS-categoria a, .inicioS-categoria span {
   align-items: center;
-}
-
-.titulo-productos {
-  font-family: 'Carattere', static;
+  font-size: 0.7rem;
   color: #fff;
-  font-size: 8rem;
-  display: block;
-  text-align: center;
-  margin-bottom: 0px; 
+  text-decoration: none;
 }
 
-.productos-contenedor {
-  display: flex;
-  gap: 100px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.producto {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.imagen-producto {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.imagen-producto img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px 20px 0 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.img-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.imagen-producto:hover .img-hover {
-  opacity: 1;
-}
-
-.imagen-producto:hover .img-default {
-  opacity: 0;
-}
-
-.info-producto {
-  width: 100%;
-  height: auto;
-  background-color: #0f0f0f;
-  border-left: 1px solid #464545;
-  border-right: 1px solid #464545;
-  border-bottom: 1px solid #464545;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.nombre-producto,
-.precio-producto {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-.precio-producto {
-  font-weight: bold;
-}
-
-.anuncio-producto {  
-  font-family: 'Montserrat', sans-serif;
+.inicioS-categoria a:hover,
+.inicioS-categoria a:visited:hover {
   color: #e188e0;
-  font-size: 0.5rem;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
 }
 
-.btn {  
+.inicioS-categoria a:visited {
+  color: #fff;
+}
+
+.titulo-inicioS {
+  font-family: 'Carattere', cursive;
+  color: white;
+  font-size: 6rem;
+}
+
+.formulario-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 420px;
+  margin-top: 20px;
+}
+
+.formulario-inicio label {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.formulario-inicio input {
+  padding: 10px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  color: white;
+}
+
+.input-con-icono {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-con-icono input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border-radius: 20px;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  color: white;
+}
+
+.input-con-icono i {
+  position: absolute;
+  right: 15px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.input-con-icono i.activo {
+  color: #e188e0;
+}
+.formulario-inicio input::placeholder {
+  color: #464545;
+}
+
+.formulario-inicio input:focus {
+  outline: none;
+  border: 1px solid #e188e0;
+}
+
+.formulario-inicio button {
   font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
   font-size: 0.9rem;
   font-weight: bold;
-  width: 100px; 
+  width: 420px; 
   text-align: center;
   display: inline-block;
   background-color: #0f0f0f;
   border: 1px solid #464545;
   padding: 10px 0;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: none;
 }
 
-.btn:hover {
+.formulario-inicio button:hover {
   background-color: #1f1e1e;
+}
+
+.formulario-inicio button:active {
+  background-color: #e188e0;
+}
+
+.olvidar-contraseña a,
+.olvidar-contraseña a:visited {
+  color: #e188e0;
+  font-size: 0.7rem;
+  text-decoration: none;
 }
 
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
