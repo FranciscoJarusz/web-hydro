@@ -42,8 +42,8 @@ productos.forEach(producto => {
             ${producto.anuncio ? `<span class="anuncio-producto">${producto.anuncio}</span>` : ''}
         </div>
         <div class="botones-producto">
-            <a href="${producto.redireccionPagina}" class="btn btn-comprar">Comprar</a>
-            <button class="btn btn-ver">Ver</button>
+            <button class="btn btn-comprar">Comprar</button>
+            <a href="${producto.redireccionPagina}" class="btn btn-ver">Ver</a>
         </div>
       </div>
     </div>

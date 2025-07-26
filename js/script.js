@@ -1,26 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ---------- Selección de talle ----------
   const botones = document.querySelectorAll('.boton-talle');
   const spanTalle = document.getElementById('talle-seleccionado');
 
-  botones.forEach(boton => {
-    boton.addEventListener('click', () => {
-      botones.forEach(b => b.classList.remove('activo'));
-      boton.classList.add('activo');
-      spanTalle.textContent = boton.textContent;
+  if (botones.length > 0 && spanTalle) {
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        botones.forEach(b => b.classList.remove('activo'));
+        boton.classList.add('activo');
+        spanTalle.textContent = boton.textContent;
+      });
     });
-  });
-});
+  }
 
-let cantidad = 1;
+  const btnMenos = document.querySelector('.btn-menos');
+  const btnMas = document.querySelector('.btn-mas');
+  const cantidadEl = document.getElementById('cantidad');
 
-document.querySelector('.btn-menos').addEventListener('click', () => {
-    if (cantidad > 1) {
+  let cantidad = 1;
+
+  if (btnMenos && cantidadEl) {
+    btnMenos.addEventListener('click', () => {
+      if (cantidad > 1) {
         cantidad--;
-        document.getElementById('cantidad').textContent = cantidad;
-    }
-});
+        cantidadEl.textContent = cantidad;
+      }
+    });
+  }
 
-document.querySelector('.btn-mas').addEventListener('click', () => {
-    cantidad++;
-    document.getElementById('cantidad').textContent = cantidad;
+  if (btnMas && cantidadEl) {
+    btnMas.addEventListener('click', () => {
+      cantidad++;
+      cantidadEl.textContent = cantidad;
+    });
+  }
 });

@@ -197,29 +197,47 @@ main {
 
 /* ------------------------------------------------------------------ BANNER ENVIO ------------------------------------------------------------------ */
 
-.banner-envio {
+.banner-seccion {
   position: fixed;
-  top: 104px;
+  top: 104px;        
   left: 0;
   width: 100%;
   z-index: 999;
   background-color: #e188e0;
   color: white;
   padding: 10px 0;
+  overflow: hidden;
+}
+
+.banner-contenedor {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-tracker {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.banner-texto-contenedor {
+  display: flex;
+  gap: 40px;
 }
 
 .banner-texto {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  color: #fff;
 }
 
-.banner-texto img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
