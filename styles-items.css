@@ -267,7 +267,14 @@ main {
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+}
+
+.tips-contenedor {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .producto-detalles {
