@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles-usuario.css">
+    <link rel="stylesheet" href="../css/styles-crearCuenta.css">
 
-    <title>Cambiar contraseña - Hydro</title>
+    <title>Crear cuenta - Hydro</title>
 
-    <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
+    <link rel="icon" type="image/png" href="../img/whitelogo_hydro.png">
 
     <!--------------------------------------------------- ICONOS --------------------------------------------------->
 
@@ -19,7 +19,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Condiment&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
 
 </head>
@@ -34,23 +33,23 @@
             
                 <div class="logo">
 
-                    <a href="index.html">
-                        <img src="img/whitelogo_hydro.png" alt="Logo" class="logo-img">
+                    <a href="../pages/index.html">
+                        <img src="../img/whitelogo_hydro.png" alt="Logo" class="logo-img">
                     </a>
                     
                 </div>
 
-                <a href="usuarioPage.html">
+                <a href="../pages/usuarioPage.html">
                     
                     <div class="usuario">
-                        <i class="fas fa-user" alt="Usuario"></i>
+                        <i class="fas fa-user" aria-label="Usuario"></i>
                     </div>
                     
                 </a>
                 
                 <div class="carro-compra">
 
-                    <i class="fas fa-shopping-cart" alt="Carrito de compra"></i>
+                    <i class="fas fa-shopping-cart" aria-label="Carrito de compra"></i>
                     
                 </div>
 
@@ -61,7 +60,7 @@
                         <input type="text" placeholder="¿Qué estas buscando?" class="input-busqueda" id="input-busqueda">
 
                             <button type="submit" class="boton-busqueda">
-                                <i class="fas fa-search" alt="Boton de búsqueda"></i>
+                                <i class="fas fa-search" aria-label="Buscar"="Boton de búsqueda"></i>
                             </button>
 
                     </form>
@@ -75,7 +74,7 @@
     </div>
 
     <main>
-
+        
         <section class="banner-seccion">
 
             <div class="banner-contenedor">
@@ -104,29 +103,55 @@
             
         </section>
 
-        <div class="inicioS-contenedor">    
+        <div class="crearCuenta-contenedor">    
 
-            <div class="inicioS-detalles">
+            <div class="crearCuenta-detalles">
 
-                <div class="inicioS-categoria">
+                <div class="crearCuenta-categoria">
 
-                    <a href="index.html">Inicio</a>
+                    <a href="../pages/index.html">Inicio</a>
                     <span>></span>
-                    <a href="usuarioPage.html">Mi cuenta</a>
+                    <a href="../pages/usuarioPage.html">Mi cuenta</a>
                     <span>></span>
-                    <span>Cambiar contraseña</span>
+                    <span>Crear cuenta</span>
 
                 </div> 
 
-                <span class="titulo-inicioS">Cambiar Contraseña</span>
+                <span class="titulo-crearCuenta">Crear cuenta</span>
 
-                <span>Vamos a enviarte un email para que puedas cambiar tu contraseña.</span>
                 <form class="formulario-inicio" id="formLogin">
-                    <label for="usuario">Email</label>
-                    <input type="email" id="usuario" name="usuario" placeholder="Ej: tuemail@gmail.com" required>
 
-                    <button type="submit">Enviar email</button>
+                    <label for="nombre-apellido">Nombre y apellido</label>
+                    <input type="text" id="nombre-apellido" name="nombreApellido" placeholder="Ej: Francisco Jarusz" required>
 
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ej: tuemail@gmail.com" required>
+
+                    <label for="telefono">Número de teléfono (opcional)</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 11 23445567">
+
+                    <label for="contrasena">Contraseña</label>
+                    <div class="campo-contrasena">
+                        <div class="input-con-icono">
+                        <input type="password" id="crear-contrasena" name="contrasena" placeholder="Ej: tucontraseña" required>
+                        <i id="crear-vistaContrasena" class="fas fa-eye-slash"></i>
+                        </div>
+                    </div>
+
+                    <label for="confirmar">Confirmar contraseña</label>
+                    <div class="campo-contrasena">
+                        <div class="input-con-icono">
+                        <input type="password" id="crear-confirmar" name="confirmar" placeholder="Repetí tu contraseña" required>
+                        <i id="crear-vistaConfirmar" class="fas fa-eye-slash"></i>
+                        </div>
+                    </div>
+
+                    <p id="errorConfirmacion" style="color: red; display: none; font-size: 0.8rem;">
+                        Las contraseñas no coinciden.
+                    </p>
+
+                    <button type="submit">Crear cuenta</button>
+                    
                 </form>
 
             </div>
@@ -142,7 +167,7 @@
         <div class="footer-item">
 
             <a href="https://www.instagram.com/hydro.arg/" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-label="Instagram"></i>
             </a>
             
         </div>
@@ -156,8 +181,8 @@
 
     </footer>
 
-<script src="js/busqueda.js"></script>    
-<script src="js/contraseña.js"></script>  
+<script src="../js/busqueda.js"></script>    
+<script src="../js/contraseña.js"></script>  
 
 </body>
 

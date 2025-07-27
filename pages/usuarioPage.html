@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles-usuario.css">
+    <link rel="stylesheet" href="../css/styles-usuario.css">
 
     <title>Usuario - Hydro</title>
 
-    <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
+    <link rel="icon" type="image/png" href="../img/whitelogo_hydro.png">
 
     <!--------------------------------------------------- ICONOS --------------------------------------------------->
 
@@ -19,7 +19,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Condiment&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
 
 </head>
@@ -34,23 +33,23 @@
             
                 <div class="logo">
 
-                    <a href="index.html">
-                        <img src="img/whitelogo_hydro.png" alt="Logo" class="logo-img">
+                    <a href="../pages/index.html">
+                        <img src="../img/whitelogo_hydro.png" alt="Logo" class="logo-img">
                     </a>
                     
                 </div>
 
-                <a href="usuarioPage.html">
+                <a href="../pages/usuarioPage.html">
                     
                     <div class="usuario">
-                        <i class="fas fa-user" alt="Usuario"></i>
+                        <i class="fas fa-user" aria-label="Usuario"></i>
                     </div>
                     
                 </a>
                 
                 <div class="carro-compra">
 
-                    <i class="fas fa-shopping-cart" alt="Carrito de compra"></i>
+                    <i class="fas fa-shopping-cart" aria-label="Carrito de compra"></i>
                     
                 </div>
 
@@ -61,7 +60,7 @@
                         <input type="text" placeholder="¿Qué estas buscando?" class="input-busqueda" id="input-busqueda">
 
                             <button type="submit" class="boton-busqueda">
-                                <i class="fas fa-search" alt="Boton de búsqueda"></i>
+                                <i class="fas fa-search" aria-label="Boton de búsqueda"></i>
                             </button>
 
                     </form>
@@ -103,21 +102,21 @@
             </div>
             
         </section>
-        <div class="inicioS-contenedor">    
+        <div class="usuario-contenedor">    
 
-            <div class="inicioS-detalles">
+            <div class="usuario-detalles">
 
-                <div class="inicioS-categoria">
+                <div class="usuario-categoria">
 
-                    <a href="index.html">Inicio</a>
+                    <a href="../pages/index.html">Inicio</a>
                     <span>></span>
-                    <a href="usuarioPage.html">Mi cuenta</a>
+                    <a href="../pages/usuarioPage.html">Mi cuenta</a>
                     <span>></span>
                     <span>Iniciar Sesión</span>
 
                 </div> 
 
-                <span class="titulo-inicioS">Iniciar Sesión</span>
+                <span class="titulo-usuario">Iniciar Sesión</span>
 
                 <form class="formulario-inicio" id="formLogin">
                 
@@ -128,18 +127,18 @@
                     <div class="campo-contrasena">
                         <div class="input-con-icono">
                             <input id="login-contrasena" type="password" placeholder="Ej: tucontraseña" required>
-                            <i id="vistaContrasena" class="fas fa-eye-slash"></i>
+                            <i id="vistaContrasena" class="fas fa-eye-slash" aria-label="Mostrar Contraseña"></i>
                         </div>
                     </div>
 
                     <span class="olvidar-contraseña">
-                        <a href="olvidarContraseña.html">¿Has olvidado tu contraseña?</a>
+                        <a href="../pages/olvidarContraseña.html">¿Has olvidado tu contraseña?</a>
                     </span>
 
                     <button type="submit">Iniciar Sesión</button>
 
                     <span class="crear-cuenta">
-                        ¿No tenés cuenta aún? <a href="crearCuenta.html">Crear cuenta</a>
+                        ¿No tenés cuenta aún? <a href="../pages/crearCuenta.html">Crear cuenta</a>
                     </span>
                     
                 </form>
@@ -157,7 +156,7 @@
         <div class="footer-item">
 
             <a href="https://www.instagram.com/hydro.arg/" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-label="Instagram"></i>
             </a>
             
         </div>
@@ -171,8 +170,8 @@
 
     </footer>
 
-<script src="js/busqueda.js"></script>    
-<script src="js/contraseña.js"></script>  
+<script src="../js/busqueda.js"></script>    
+<script src="../js/contraseña.js"></script>  
 
 </body>
 

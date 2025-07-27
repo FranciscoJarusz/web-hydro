@@ -3,25 +3,25 @@ const productos = [
     nombre: "Remera 9 de Julio",
     precio: "$21.990,00",
     anuncio: "3 cuotas sin interés de $7.330,00",
-    primeraImg: "img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio1.jpg",
-    segundaImg: "img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio2.jpg",
-    redireccionPagina: "remera9deJulio.html"
+    primeraImg: "../img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio1.jpg",
+    segundaImg: "../img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio2.jpg",
+    redireccionPagina: "../pages/remera9deJulio.html"
   },
   {
     nombre: "Remera Corrientes",
     precio: "$21.990,00",
     anuncio: "3 cuotas sin interés de $7.330,00",
-    primeraImg: "img/presentacion-remeras/remera-corrientes/remera-corrientes1.jpg",
-    segundaImg: "img/presentacion-remeras/remera-corrientes/remera-corrientes2.jpg",
-    redireccionPagina: "remeraCorrientes.html"
+    primeraImg: "../img/presentacion-remeras/remera-corrientes/remera-corrientes1.jpg",
+    segundaImg: "../img/presentacion-remeras/remera-corrientes/remera-corrientes2.jpg",
+    redireccionPagina: "../pages/remeraCorrientes.html"
   },
   {
     nombre: "Remera Gaona",
     precio: "$21.990,00",
     anuncio: "3 cuotas sin interés de $7.330,00",
-    primeraImg: "img/presentacion-remeras/remera-gaona/remera-gaona1.jpg",
-    segundaImg: "img/presentacion-remeras/remera-gaona/remera-gaona2.jpg",
-    redireccionPagina: "remeraGaona.html"
+    primeraImg: "../img/presentacion-remeras/remera-gaona/remera-gaona1.jpg",
+    segundaImg: "../img/presentacion-remeras/remera-gaona/remera-gaona2.jpg",
+    redireccionPagina: "../pages/remeraGaona.html"
   }
 ];
 

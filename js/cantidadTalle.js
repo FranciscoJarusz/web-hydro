@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ---------- Selección de talle ----------
   const botones = document.querySelectorAll('.boton-talle');
   const spanTalle = document.getElementById('talle-seleccionado');
 

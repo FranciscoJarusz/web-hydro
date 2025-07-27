@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles-crearCuenta.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
-    <title>Crear cuenta - Hydro</title>
+    <title>Hydro</title>
 
-    <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
+    <link rel="icon" type="image/png" href="../img/whitelogo_hydro.png">
 
     <!--------------------------------------------------- ICONOS --------------------------------------------------->
 
@@ -19,7 +21,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Condiment&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
 
 </head>
@@ -34,23 +35,23 @@
             
                 <div class="logo">
 
-                    <a href="index.html">
-                        <img src="img/whitelogo_hydro.png" alt="Logo" class="logo-img">
+                    <a href="../pages/index.html">
+                        <img src="../img/whitelogo_hydro.png" alt="Logo" class="logo-img">
                     </a>
                     
                 </div>
 
-                <a href="usuarioPage.html">
+                <a href="../pages/usuarioPage.html">
                     
                     <div class="usuario">
-                        <i class="fas fa-user" alt="Usuario"></i>
+                        <i class="fas fa-user" aria-label="Usuario"></i>
                     </div>
                     
                 </a>
                 
                 <div class="carro-compra">
 
-                    <i class="fas fa-shopping-cart" alt="Carrito de compra"></i>
+                    <i class="fas fa-shopping-cart" aria-label="Carrito de compra"></i>
                     
                 </div>
 
@@ -61,7 +62,7 @@
                         <input type="text" placeholder="¿Qué estas buscando?" class="input-busqueda" id="input-busqueda">
 
                             <button type="submit" class="boton-busqueda">
-                                <i class="fas fa-search" alt="Boton de búsqueda"></i>
+                                <i class="fas fa-search" aria-label="Boton de búsqueda"></i>
                             </button>
 
                     </form>
@@ -75,7 +76,20 @@
     </div>
 
     <main>
-        
+
+        <div class="imagen-fondo">
+
+            <div class="contenedor-texto">
+
+                <span class="texto-superior">3 cuotas sin interés</span>
+                <span class="texto-inferior">Descuentos; 10%off en transferencia - 15%off en efectivo.</span>
+
+            </div>
+            
+            <img src="../img/4-POSTEO.jpg" class="imagen-recortada" alt="Imagen recortada">
+
+        </div>
+
         <section class="banner-seccion">
 
             <div class="banner-contenedor">
@@ -104,56 +118,17 @@
             
         </section>
 
-        <div class="inicioS-contenedor">    
+        <div class="seccion-productos">
 
-            <div class="inicioS-detalles">
+            <div class="contenedor-productos">
 
-                <div class="inicioS-categoria">
+                <span class="titulo-productos">Últimos lanzamientos</span>
 
-                    <a href="index.html">Inicio</a>
-                    <span>></span>
-                    <a href="usuarioPage.html">Mi cuenta</a>
-                    <span>></span>
-                    <span>Crear cuenta</span>
+                <div class="productos-contenedor" id="productos-contenedor">
 
-                </div> 
+                    <!-- Aca se ponen los productos -->
 
-                <span class="titulo-inicioS">Crear cuenta</span>
-
-                <form class="formulario-inicio" id="formLogin">
-
-                    <label for="nombre-apellido">Nombre y apellido</label>
-                    <input type="text" id="nombre-apellido" name="nombreApellido" placeholder="Ej: Francisco Jarusz" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Ej: tuemail@gmail.com" required>
-
-                    <label for="telefono">Número de teléfono (opcional)</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 11 23445567">
-
-                    <label for="contrasena">Contraseña</label>
-                    <div class="campo-contrasena">
-                        <div class="input-con-icono">
-                        <input type="password" id="crear-contrasena" name="contrasena" placeholder="Ej: tucontraseña" required>
-                        <i id="crear-vistaContrasena" class="fas fa-eye-slash"></i>
-                        </div>
-                    </div>
-
-                    <label for="confirmar">Confirmar contraseña</label>
-                    <div class="campo-contrasena">
-                        <div class="input-con-icono">
-                        <input type="password" id="crear-confirmar" name="confirmar" placeholder="Repetí tu contraseña" required>
-                        <i id="crear-vistaConfirmar" class="fas fa-eye-slash"></i>
-                        </div>
-                    </div>
-
-                    <p id="errorConfirmacion" style="color: red; display: none; font-size: 0.8rem;">
-                        Las contraseñas no coinciden.
-                    </p>
-
-                    <button type="submit">Crear cuenta</button>
-                    
-                </form>
+                </div>
 
             </div>
 
@@ -168,7 +143,7 @@
         <div class="footer-item">
 
             <a href="https://www.instagram.com/hydro.arg/" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-label="Instagram"></i>
             </a>
             
         </div>
@@ -177,13 +152,14 @@
           <p>© 2025. HYDRO.</p>
           <p class="hecho-por">Diseño y desarrollo por <a href="https://www.instagram.com/franjarusz/" target="_blank"><strong>Francisco Jarusz</strong></a></p>
         </div>
-
+        
       </div>
 
     </footer>
 
-<script src="js/busqueda.js"></script>    
-<script src="js/contraseña.js"></script>  
+<script src="../js/busqueda.js"></script>
+<script src="../js/product-card.js"></script>
+<script src="../js/cantidadTalle.js"></script>
 
 </body>
 

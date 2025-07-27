@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles-remeras.css">
 
-    <title>Hydro</title>
+    <title>Remera 9 de Julio - Hydro</title>
 
-    <link rel="icon" type="image/png" href="img/whitelogo_hydro.png">
+    <link rel="icon" type="image/png" href="../img/whitelogo_hydro.png">
 
     <!--------------------------------------------------- ICONOS --------------------------------------------------->
 
@@ -21,7 +19,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Condiment&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
 
 </head>
@@ -36,23 +33,23 @@
             
                 <div class="logo">
 
-                    <a href="index.html">
-                        <img src="img/whitelogo_hydro.png" alt="Logo" class="logo-img">
+                    <a href="../pages/index.html">
+                        <img src="../img/whitelogo_hydro.png" alt="Logo" class="logo-img">
                     </a>
                     
                 </div>
 
-                <a href="usuarioPage.html">
+                <a href="../pages/usuarioPage.html">
                     
                     <div class="usuario">
-                        <i class="fas fa-user" alt="Usuario"></i>
+                        <i class="fas fa-user" aria-label="Usuario"></i>
                     </div>
                     
                 </a>
                 
                 <div class="carro-compra">
 
-                    <i class="fas fa-shopping-cart" alt="Carrito de compra"></i>
+                    <i class="fas fa-shopping-cart" aria-label="Carrito de compra"></i>
                     
                 </div>
 
@@ -63,7 +60,7 @@
                         <input type="text" placeholder="¿Qué estas buscando?" class="input-busqueda" id="input-busqueda">
 
                             <button type="submit" class="boton-busqueda">
-                                <i class="fas fa-search" alt="Boton de búsqueda"></i>
+                                <i class="fas fa-search" aria-label="Boton de búsqueda"></i>
                             </button>
 
                     </form>
@@ -77,19 +74,6 @@
     </div>
 
     <main>
-
-        <div class="imagen-fondo">
-
-            <div class="contenedor-texto">
-
-                <span class="texto-superior">3 cuotas sin interés</span>
-                <span class="texto-inferior">Descuentos; 10%off en transferencia - 15%off en efectivo.</span>
-
-            </div>
-            
-            <img src="img/4-POSTEO.jpg" class="imagen-recortada" alt="Imagen recortada">
-
-        </div>
 
         <section class="banner-seccion">
 
@@ -118,22 +102,88 @@
             </div>
             
         </section>
+        <div class="producto-contenedor">
 
-        <div class="seccion-productos">
+        <div class="producto-imagen-wrapper">
 
-            <div class="contenedor-productos">
+            <div class="producto-imagen">
+                <img src="../img/presentacion-remeras/remera-9-de-julio/remera-9-de-julio2.jpg" alt="Remera 9 de Julio" class="imagen-producto">
+            </div>
 
-                <span class="titulo-productos">Últimos lanzamientos</span>
+            <span class="producto-descripcion-titulo">Descripción</span>
 
-                <div class="productos-contenedor" id="productos-contenedor">
+            <div class="medidas-talle">
+                <span class="producto-descripcion">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quisquam aut dolore aliquam, ratione corrupti aspernatur quod atque cum nemo quibusdam.</span><br>
+                <span class="producto-descripcion">Talle 1: largo 66cm - ancho 59cm</span><br>
+                <span class="producto-descripcion">Talle 2: largo 67cm - ancho 64cm</span>
+            </div>
 
-                    <!-- Aca se ponen los productos -->
+            <span class="producto-descripcion-titulo">Cuidados</span>
+
+            <div class="tips-contenedor">
+                <span class="producto-descripcion">Girar del revés</span><br>
+                <span class="producto-descripcion">Lavar en agua fría: utilizar agua fría para lavar la remera. El agua caliente puede causar que la prenda se encoja o pierda color con el tiempo.</span><br>
+                <span class="producto-descripcion">Detergente suave: evita el uso de productos agresivos que puedan dañar las fibras de algodón.</span><br>
+                <span class="producto-descripcion">Evitar suavizantes.</span>
+            </div>            
+            
+        </div>
+
+            <div class="producto-detalles">
+
+                <div class="producto-categoria">
+
+                    <a href="../pages/index.html">Inicio</a>
+                    <span>></span>
+                    <a href="../pages/remera9deJulio.html">Remera 9 de Julio</a>
+
+                </div>
+
+                <span class="producto-titulo">Remera 9 de Julio</span>
+
+                <span class="producto-precio">$21.990,00</span>
+
+                <div class="anuncio-producto">
+                    <i class="fas fa-credit-card"></i>
+                    <span>3 cuotas sin interés de $7.330,00</span>
+                </div>
+
+                <span class="producto-anuncio">15% de descuento pagando con transferencia</span>    
+
+                <span class="talle-titulo">Talle: <span id="talle-seleccionado">1</span></span>
+                <div class="botones-talle">
+                    <button class="boton-talle activo">1</button>
+                    <button class="boton-talle">2</button>
+                </div>
+
+                <div class="botones-contenedor">
+
+                    <div class="cantidad-selector">
+                        <button class="btn-menos">−</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-mas">+</button>
+                    </div>
+
+                    <button class="boton-agregar">Agregar al carrito</button>
+                    
+                </div>
+
+                <div class="devolucion-producto">
+
+                    <div class="devolucion-titulo">
+                        <i class="fas fa-undo" aria-label="Devolver"></i>
+                        <span class="devolucion-titulo-texto">Cambios y devoluciones</span>
+                    </div>
+                    
+                    <span class="devolucion-descripcion">
+                        Tenes hasta 15 días desde que lo recibís para hacer el cambio de la prenda.
+                    </span>
 
                 </div>
 
             </div>
 
-        </div>
+        </div>     
 
     </main>
 
@@ -144,7 +194,7 @@
         <div class="footer-item">
 
             <a href="https://www.instagram.com/hydro.arg/" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-label="Instagram"></i>
             </a>
             
         </div>
@@ -153,14 +203,14 @@
           <p>© 2025. HYDRO.</p>
           <p class="hecho-por">Diseño y desarrollo por <a href="https://www.instagram.com/franjarusz/" target="_blank"><strong>Francisco Jarusz</strong></a></p>
         </div>
-        
+
       </div>
 
     </footer>
 
-<script src="js/busqueda.js"></script>
-<script src="js/product-card.js"></script>
-<script src="js/script.js"></script>
+<script src="../js/busqueda.js"></script>    
+<script src="../js/product-card.js"></script>
+<script src="../js/cantidadTalle.js"></script>
 
 </body>
 

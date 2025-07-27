@@ -1,3 +1,11 @@
+function normalizarTexto(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, ""); 
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const formularioBusqueda = document.getElementById('formulario-busqueda');
   const inputBusqueda = document.getElementById('input-busqueda');
@@ -7,32 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const productos = [
     {
       nombre: "Remera 9 de Julio",
-      redireccionPagina: "remera9deJulio.html"
+      redireccionPagina: "../pages/remera9deJulio.html"
     },
     {
       nombre: "Remera Corrientes",
-      redireccionPagina: "remeraCorrientes.html"
+      redireccionPagina: "../pages/remeraCorrientes.html"
     },
     {
       nombre: "Remera Gaona",
-      redireccionPagina: "remeraGaona.html"
+      redireccionPagina: "../pages/remeraGaona.html"
     }
   ];
 
   formularioBusqueda.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const termino = inputBusqueda.value.trim().toLowerCase();
+    const termino = normalizarTexto(inputBusqueda.value.trim());
 
-    const producto = productos.find(p =>
-      p.nombre.toLowerCase().includes(termino)
-    );
+    const producto = productos.find(p => {
+      const nombreNormalizado = normalizarTexto(p.nombre);
+      return nombreNormalizado.includes(termino);
+    });
 
     if (producto) {
       window.location.href = producto.redireccionPagina;
     } else {
       localStorage.setItem("terminoBusqueda", termino);
-      window.location.href = "noEncontrado.html";
+      window.location.href = "../pages/noEncontrado.html";
     }
   });
 });

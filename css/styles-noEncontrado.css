@@ -11,7 +11,6 @@ html, body {
 }
 
 html {
-  min-height: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
 }
@@ -242,190 +241,24 @@ main {
 
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
 
-.producto-imagen-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 600px;
-  gap: 40px;
-}
-
 .producto-contenedor {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
   gap: 40px;
   padding: 40px 0;
-  margin-top: 80px
-}
-
-.producto-imagen {
-  position: relative;
-  width: 600px;
-  height: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.imagen-producto {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.producto-descripcion-titulo {
-  font-family: 'Carattere', cursive;
-  color: #FFFFFF;
-  font-size: 5rem;
-  margin-bottom: -40px;
-}
-
-.medidas-talle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-.tips-contenedor {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
+  margin-top: 80px;
+  max-width: 800px;
+  margin-left: 305px; 
 }
 
 .producto-detalles {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 30px;
+  padding: 0;
   border-radius: 20px;
   color: #fff;
-  gap: 10px;
-  min-width: 250px;
-}
-
-.producto-titulo {
-  font-family: 'Carattere', cursive;
-  font-size: 5rem;
-  margin-bottom: -20px;
-}
-
-.producto-precio {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.anuncio-producto {  
-  font-family: 'Montserrat', sans-serif;
-  color: #e188e0;
-  font-size: 1rem;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.producto-anuncio {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  margin-bottom: 30px;
-}
-
-.botones-talle {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.boton-talle {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
-  font-size: 0.9rem;
-  font-weight: bold;
-  width: 100px; 
-  text-align: center;
-  display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  padding: 10px 0;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: none;
-}
-
-.boton-talle.activo {
-  background-color: #e188e0;
-  color: #fff;
-}
-
-.boton-talle:not(.activo):hover {
-  background-color: #1f1e1e;
-  color: #fff;
-}
-
-.botones-contenedor {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.cantidad-selector {
-  width: 200px;
-  display: flex;
-  align-items: center;  
-  justify-content: space-between;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;  
-  border-radius: 20px;
-  padding: 5px 10px;
-  color: #fff;
-}
-
-.cantidad-selector button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.cantidad {
-  width: 30px;
-  text-align: center;
-  font-size: 16px;
-}
-
-.cantidad-selector button:hover {
-  color: #e188e0;
-}
-
-.boton-agregar {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
-  font-size: 0.9rem;
-  font-weight: bold;
-  width: 300px; 
-  text-align: center;
-  display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.boton-agregar:hover {
-  background-color: #1f1e1e;
+  gap: 20px;
+  width: 100%;
 }
 
 .producto-categoria a, .producto-categoria span {
@@ -439,8 +272,142 @@ main {
 .producto-categoria a:visited:hover {
   color: #e188e0;
 }
-.producto-categoria a:visited {
+
+.mensaje-no-encontrado {
+  color: white;
+}
+
+.mensaje-no-encontrado span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.mensaje-no-encontrado p {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.seccion-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0;
+}
+
+.titulo-productos {
+  font-family: 'Carattere', cursive;
   color: #fff;
+  font-size: 8rem;
+  display: block;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.productos-contenedor {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+
+.producto {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.imagen-producto {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.imagen-producto img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px 20px 0 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imagen-producto:hover .img-hover {
+  opacity: 1;
+}
+
+.imagen-producto:hover .img-default {
+  opacity: 0;
+}
+
+.info-producto {
+  width: 100%;
+  height: auto;
+  background-color: #0f0f0f;
+  border-left: 1px solid #464545;
+  border-right: 1px solid #464545;
+  border-bottom: 1px solid #464545;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.nombre-producto,
+.precio-producto {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.precio-producto {
+  font-weight: bold;
+}
+
+.anuncio-producto {  
+  font-family: 'Montserrat', sans-serif;
+  color: #e188e0;
+  font-size: 0.5rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn {  
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 100px; 
+  text-align: center;
+  display: inline-block;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  padding: 10px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1f1e1e;
 }
 
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
