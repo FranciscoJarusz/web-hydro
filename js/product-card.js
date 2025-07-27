@@ -31,8 +31,8 @@ productos.forEach(producto => {
   const html = `
     <div class="producto">
       <div class="imagen-producto">
-        <img class="img-default" src="${producto.primeraImg}" alt="Imágen ${producto.nombre}">
-        <img class="img-hover" src="${producto.segundaImg}" alt="Imágen ${producto.nombre}">
+        <img class="img-default" src="${producto.primeraImg}" alt="Imágen ${producto.nombre} width="250" height="450"">
+        <img class="img-hover" src="${producto.segundaImg}" alt="Imágen ${producto.nombre} width="250" height="450"">
       </div>
       <div class="info-producto">
         <span class="nombre-producto">${producto.nombre}</span>
