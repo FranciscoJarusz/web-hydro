@@ -1,0 +1,177 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const botonAgregar = document.querySelector(".boton-agregar");
+  const menuCarrito = document.getElementById("menuCarrito");
+  const overlay = document.getElementById("overlayBlur");
+  const carritoIcon = document.querySelector(".carro-compra");
+
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  let costoEnvio = parseFloat(localStorage.getItem("envio")) || 0;
+
+  carritoIcon.addEventListener("click", () => {
+    menuCarrito.classList.add("activo");
+    overlay.classList.add("activo");
+    actualizarCarritoUI();
+  });
+
+  overlay.addEventListener("click", () => {
+    menuCarrito.classList.remove("activo");
+    overlay.classList.remove("activo");
+  });
+
+  if (botonAgregar) {
+    botonAgregar.addEventListener("click", () => {
+      const nombre = document.querySelector(".producto-titulo").textContent.trim();
+      const precioTexto = document.querySelector(".producto-precio").textContent.trim();
+      const precio = parseFloat(precioTexto.replace(/\$/g, '').replace(/\./g, '').replace(',', '.'));
+      const imagen = document.querySelector(".imagen-producto")?.getAttribute("src") || "";
+      const talleActivo = document.querySelector(".boton-talle.activo");
+      const cantidad = parseInt(document.getElementById("cantidad").textContent);
+
+      if (!talleActivo) {
+        alert("Por favor, seleccioná un talle.");
+        return;
+      }
+
+      const talle = talleActivo.textContent;
+
+      const existente = carrito.find(
+        item => item.nombre === nombre && item.talle === talle
+      );
+
+      if (existente) {
+        existente.cantidad += cantidad;
+      } else {
+        carrito.push({ nombre, precio, imagen, talle, cantidad });
+      }
+
+      guardarCarrito();
+      actualizarCarritoUI();
+    });
+  }
+
+  function eliminarItem(index) {
+    carrito.splice(index, 1);
+    guardarCarrito();
+    actualizarCarritoUI();
+  }
+
+  window.eliminarItemDelCarrito = eliminarItem;
+
+  function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("envio", costoEnvio);
+  }
+
+  function calcularPrecioEnvio(cp) {
+    const cpNum = parseInt(cp);
+    if (cpNum >= 1000 && cpNum < 2000) return 0;
+    if (cpNum >= 2000 && cpNum < 6000) return 1500;
+    if (cpNum >= 6000 && cpNum <= 9999) return 2500;
+    return 3000;
+  }
+
+  function actualizarCarritoUI() {
+    menuCarrito.innerHTML = "<h3 style='color:white;'>Carrito de compras</h3>";
+
+    if (carrito.length === 0) {
+      menuCarrito.innerHTML += "<p style='color:white;'>El carrito está vacío.</p>";
+      return;
+    }
+
+    let total = 0;
+
+    carrito.forEach((item, index) => {
+      const subtotal = item.precio * item.cantidad;
+      total += subtotal;
+
+      menuCarrito.innerHTML += `
+        <div class="item-carrito">
+            <div class="item-contenedor">
+                <img src="${item.imagen}" alt="${item.nombre}">
+                
+                <div class="item-info">
+                    <p class="item-nombre">
+                        ${item.nombre} <span class="item-talle">(Talle ${item.talle})</span>
+                    </p>
+                    
+
+                    <div class="item-cantidad-controles">
+                        <button class="cantidad-btn" onclick="restarCantidad(${index})">−</button>
+                        <span class="cantidad" id="cantidad">${item.cantidad}</span>
+                        <button class="cantidad-btn" onclick="sumarCantidad(${index})">+</button>
+                    </div>
+                </div>
+
+                <div class="item-precio-info">
+                    <button class="btn-eliminar" onclick="eliminarItemDelCarrito(${index})">Eliminar</button>
+                    <p class="item-subtotal">$${(item.precio * item.cantidad).toLocaleString('es-AR')}</p>
+                </div>
+            </div>
+        </div>
+      `;
+    });
+
+    menuCarrito.innerHTML += `
+      <div class="subtotal-carrito">
+        <span>Subtotal (sin envío):</span>
+        <strong class="subitem-subtotal">$${total.toLocaleString('es-AR')}</strong>
+      </div>
+
+      <div class="envio-contenedor">
+        <span class="envio-texto" for="codigoPostal">Medios de envío</span>
+        <div class="envio-campo">
+          <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal">
+          <button id="calcularEnvio">Calcular</button>
+        </div>
+        <div class="mensaje-envio" id="mensajeEnvio">
+            <span>Costo de envío:</span>
+            <strong>${costoEnvio > 0 ? `$${costoEnvio.toLocaleString('es-AR')}` : ""}</strong>
+        </div>
+      </div>
+
+      <div class="total-final-contenedor">
+        <span class="total-final-texto">Total (con envío):</span>
+        <strong id="totalFinalTexto">$${(total + costoEnvio).toLocaleString('es-AR')}</strong>
+      </div>
+    `;
+
+    const btnCalcular = document.getElementById("calcularEnvio");
+    const inputCP = document.getElementById("codigoPostal");
+    const mensaje = document.getElementById("mensajeEnvio");
+    const totalTexto = document.getElementById("totalFinalTexto");
+
+    if (btnCalcular) {
+      btnCalcular.addEventListener("click", () => {
+        const cp = inputCP.value.trim();
+
+        if (!/^\d{4,5}$/.test(cp)) {
+          mensaje.textContent = "Ingresá un código postal válido.";
+          return;
+        }
+
+        const nuevoEnvio = calcularPrecioEnvio(cp);
+        costoEnvio = nuevoEnvio;
+        guardarCarrito();
+
+        mensaje.textContent = `Costo de envío: $${nuevoEnvio.toLocaleString('es-AR')}`;
+        totalTexto.textContent = `Total: $${(total + nuevoEnvio).toLocaleString('es-AR')}`;
+      });
+    }
+  }
+
+  window.sumarCantidad = function (index) {
+    carrito[index].cantidad++;
+    guardarCarrito();
+    actualizarCarritoUI();
+  };
+
+  window.restarCantidad = function (index) {
+    if (carrito[index].cantidad > 1) {
+      carrito[index].cantidad--;
+    } else {
+      carrito.splice(index, 1);
+    }
+    guardarCarrito();
+    actualizarCarritoUI();
+  };
+});
