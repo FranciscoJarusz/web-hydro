@@ -417,36 +417,37 @@ main {
 }
 
 .envio-campo {
-  position: relative;
   display: flex;
+  gap: 10px;
   align-items: center;
 }
 
 .envio-campo input {
-  width: 100%;
-  padding: 10px 40px 10px 10px;
+  flex: 1;
+  padding: 10px;
   border-radius: 20px;
   background-color: #0f0f0f;
   border: 1px solid #464545;
   color: white;
 }
 
-.envio-campo button {
-  position: absolute;
-  right: 15px;
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.envio-campo button:hover {
-  color: #e188e0;
-}
-
 .envio-campo input:focus {
   outline: none;
   border: 1px solid #e188e0;
+}
+
+.calcularEnvio-btn {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  border: 1px solid #464545;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.calcularEnvio-btn:hover {
+  background-color: #1f1e1e;
 }
 
 .total-final-contenedor {

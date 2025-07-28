@@ -117,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="item-precio-info">
               <button class="btn-eliminar" onclick="eliminarItemDelCarrito(${index})">Eliminar</button>
-              <p class="item-precio-unitario">Precio unitario: $${item.precio.toLocaleString('es-AR')}</p>
               <p class="item-subtotal">Subtotal: $${subtotal.toLocaleString('es-AR')}</p>
             </div>
           </div>
@@ -135,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="envio-texto">Medios de envío</span>
         <div class="envio-campo">
           <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal">
-          <button id="calcularEnvio">Calcular</button>
+          <button class="calcularEnvio-btn"id="calcularEnvio">Calcular</button>
         </div>
         <div class="mensaje-envio" id="mensajeEnvio">
           <span>Costo de envío:</span>
