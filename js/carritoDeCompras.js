@@ -18,8 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.classList.remove("activo");
   });
 
-  if (botonAgregar) {
-    botonAgregar.addEventListener("click", () => {
+ if (botonAgregar) {
+  botonAgregar.addEventListener("click", () => {
+    const textoOriginal = botonAgregar.textContent;
+    botonAgregar.textContent = "Agregando...";
+    botonAgregar.disabled = true;
+
+    try {
       const nombre = document.querySelector(".producto-titulo").textContent.trim();
       const precioTexto = document.querySelector(".producto-precio").textContent.trim();
       const precio = parseFloat(precioTexto.replace(/\$/g, '').replace(/\./g, '').replace(',', '.'));
@@ -46,8 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       guardarCarrito();
       actualizarCarritoUI();
-    });
-  }
+    } finally {
+      
+      setTimeout(() => {
+        botonAgregar.textContent = textoOriginal;
+        botonAgregar.disabled = false;
+        mostrarToast("Producto agregado al carrito");
+      }, 1500);
+    }
+  });
+}
+
+
 
   function eliminarItem(index) {
     carrito.splice(index, 1);
@@ -71,10 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function actualizarCarritoUI() {
-    menuCarrito.innerHTML = "<h3 style='color:white;'>Carrito de compras</h3>";
+    menuCarrito.innerHTML = `
+      <div class="carrito-header">
+        <span class="carrito-titulo">Carrito de compras.</span>
+      </div>
+    `;
 
     if (carrito.length === 0) {
-      menuCarrito.innerHTML += "<p style='color:white;'>El carrito está vacío.</p>";
+      menuCarrito.innerHTML += '<span class="carrito-vacio">El carrito está vacío.</span>';
       return;
     }
 
@@ -86,27 +105,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
       menuCarrito.innerHTML += `
         <div class="item-carrito">
-            <div class="item-contenedor">
-                <img src="${item.imagen}" alt="${item.nombre}">
-                
-                <div class="item-info">
-                    <p class="item-nombre">
-                        ${item.nombre} <span class="item-talle">(Talle ${item.talle})</span>
-                    </p>
-                    
-
-                    <div class="item-cantidad-controles">
-                        <button class="cantidad-btn" onclick="restarCantidad(${index})">−</button>
-                        <span class="cantidad" id="cantidad">${item.cantidad}</span>
-                        <button class="cantidad-btn" onclick="sumarCantidad(${index})">+</button>
-                    </div>
-                </div>
-
-                <div class="item-precio-info">
-                    <button class="btn-eliminar" onclick="eliminarItemDelCarrito(${index})">Eliminar</button>
-                    <p class="item-subtotal">$${(item.precio * item.cantidad).toLocaleString('es-AR')}</p>
-                </div>
+          <div class="item-contenedor">
+            <img src="${item.imagen}" alt="${item.nombre}">
+            <div class="item-info">
+              <p class="item-nombre">${item.nombre} <span class="item-talle">(Talle ${item.talle})</span></p>
+              <div class="item-cantidad-controles">
+                <button class="cantidad-btn" onclick="restarCantidad(${index})">−</button>
+                <span class="cantidad" id="cantidad">${item.cantidad}</span>
+                <button class="cantidad-btn" onclick="sumarCantidad(${index})">+</button>
+              </div>
             </div>
+            <div class="item-precio-info">
+              <button class="btn-eliminar" onclick="eliminarItemDelCarrito(${index})">Eliminar</button>
+              <p class="item-precio-unitario">Precio unitario: $${item.precio.toLocaleString('es-AR')}</p>
+              <p class="item-subtotal">Subtotal: $${subtotal.toLocaleString('es-AR')}</p>
+            </div>
+          </div>
         </div>
       `;
     });
@@ -118,14 +132,14 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <div class="envio-contenedor">
-        <span class="envio-texto" for="codigoPostal">Medios de envío</span>
+        <span class="envio-texto">Medios de envío</span>
         <div class="envio-campo">
           <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal">
           <button id="calcularEnvio">Calcular</button>
         </div>
         <div class="mensaje-envio" id="mensajeEnvio">
-            <span>Costo de envío:</span>
-            <strong>${costoEnvio > 0 ? `$${costoEnvio.toLocaleString('es-AR')}` : ""}</strong>
+          <span>Costo de envío:</span>
+          <strong>${costoEnvio > 0 ? `$${costoEnvio.toLocaleString('es-AR')}` : ""}</strong>
         </div>
       </div>
 
@@ -174,4 +188,14 @@ document.addEventListener("DOMContentLoaded", function () {
     guardarCarrito();
     actualizarCarritoUI();
   };
+
+  function mostrarToast(mensaje) {
+    const toast = document.getElementById("toast");
+    toast.textContent = mensaje;
+    toast.classList.add("mostrar");
+
+    setTimeout(() => {
+      toast.classList.remove("mostrar");
+    }, 2500);
+  }
 });
