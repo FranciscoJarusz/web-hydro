@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const carritoIcon = document.querySelector(".carro-compra");
 
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  let costoEnvio = parseFloat(localStorage.getItem("envio")) || 0;
+  let costoEnvio = 0;
 
   carritoIcon.addEventListener("click", () => {
     menuCarrito.classList.add("activo");
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    localStorage.setItem("envio", costoEnvio);
   }
 
   function calcularPrecioEnvio(cp) {
@@ -136,10 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal">
           <button class="calcularEnvio-btn"id="calcularEnvio">Calcular</button>
         </div>
-        <div class="mensaje-envio" id="mensajeEnvio">
-          <span>Costo de envío:</span>
-          <strong>${costoEnvio > 0 ? `$${costoEnvio.toLocaleString('es-AR')}` : ""}</strong>
-        </div>
+        <div class="mensaje-envio" id="mensajeEnvio"></div>
       </div>
 
       <div class="total-final-contenedor">
@@ -163,10 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const nuevoEnvio = calcularPrecioEnvio(cp);
+        localStorage.setItem("envio", costoEnvio);
         costoEnvio = nuevoEnvio;
         guardarCarrito();
 
-        mensaje.textContent = `Costo de envío: $${nuevoEnvio.toLocaleString('es-AR')}`;
+        mensaje.innerHTML = `
+          <span>Costo de envío:</span>
+          <strong>$${nuevoEnvio.toLocaleString('es-AR')}</strong>
+        `;
         totalTexto.textContent = `Total: $${(total + nuevoEnvio).toLocaleString('es-AR')}`;
       });
     }
