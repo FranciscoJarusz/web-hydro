@@ -218,7 +218,140 @@ main {
   pointer-events: all;
 }
 
+/* ------------------------------------------------------------------ PANEL DE COMPRA ------------------------------------------------------------------ */
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.panel-titulo {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.panel-compra {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: #0f0f0f;
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid #464545;
+  border-right: 1px solid #464545;
+  border-left: 1px solid #464545;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  z-index: 10;
+
+  transform: translateY(130%);
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.producto.panel-abierto .panel-compra {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.producto {
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-compra .talles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.botones-talle-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.boton-talle-panel {
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 100px; 
+  text-align: center;
+  display: inline-block;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  padding: 10px 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.panel-compra .talles .activo {
+  background: #e188e0;
+  color: white;
+}
+
+.btn-agregar-carrito {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 210px; 
+  text-align: center;
+  display: inline-block;
+  background-color: #0f0f0f;
+  border: 1px solid #464545;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-agregar-carrito:hover {
+  background-color: #1f1e1e;
+}
+
+.btn-cerrar-panel {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 /* ------------------------------------------------------------------ DISEÑO DE CARRITO ------------------------------------------------------------------ */
+
+.toast-oculto {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+  z-index: 9999;
+}
+
+.toast-oculto.mostrar {
+  opacity: 1;
+  bottom: 50px;
+  pointer-events: all;
+}
 
 .carrito-header {
   border-bottom: 1px solid #464545;
@@ -597,11 +730,11 @@ main {
 
 .titulo-productos {
   font-family: 'Carattere', cursive;
+  font-weight: normal;
   color: #fff;
   font-size: 8rem;
   display: block;
   text-align: center;
-  margin-bottom: 0px; 
 }
 
 .productos-contenedor {
@@ -621,7 +754,7 @@ main {
 .imagen-producto {
   position: relative;
   width: 100%;
-  height: auto;
+  overflow: hidden;
 }
 
 .imagen-producto img {
@@ -640,11 +773,11 @@ main {
   transition: opacity 0.3s ease-in-out;
 }
 
-.imagen-producto:hover .img-hover {
+.producto:not(.panel-abierto) .imagen-producto:hover .img-hover {
   opacity: 1;
 }
 
-.imagen-producto:hover .img-default {
+.producto:not(.panel-abierto) .imagen-producto:hover .img-default {
   opacity: 0;
 }
 
@@ -665,11 +798,23 @@ main {
   border-bottom-right-radius: 20px;
 }
 
-.nombre-producto,
+.nombre-producto {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.2rem;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
 .precio-producto {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: 1.2rem;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .precio-producto {
@@ -685,6 +830,11 @@ main {
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+.botones-producto {
+  display: flex;
+  gap: 10px;
 }
 
 .btn {  

@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("overlayBlur");
   const carritoIcon = document.querySelector(".carro-compra");
 
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   let costoEnvio = 0;
 
   carritoIcon.addEventListener("click", () => {
+    localStorage.removeItem("envio");
+    costoEnvio = 0;
+
     menuCarrito.classList.add("activo");
     overlay.classList.add("activo");
     actualizarCarritoUI();
@@ -18,63 +20,79 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.classList.remove("activo");
   });
 
- if (botonAgregar) {
-  botonAgregar.addEventListener("click", () => {
-    const textoOriginal = botonAgregar.textContent;
-    botonAgregar.textContent = "Agregando...";
-    botonAgregar.disabled = true;
+  if (botonAgregar) {
+    botonAgregar.addEventListener("click", () => {
+      const textoOriginal = botonAgregar.textContent;
+      botonAgregar.textContent = "Agregando...";
+      botonAgregar.disabled = true;
 
-    try {
-      const nombre = document.querySelector(".producto-titulo").textContent.trim();
-      const precioTexto = document.querySelector(".producto-precio").textContent.trim();
-      const precio = parseFloat(precioTexto.replace(/\$/g, '').replace(/\./g, '').replace(',', '.'));
-      const imagen = document.querySelector(".imagen-producto")?.getAttribute("src") || "";
-      const talleActivo = document.querySelector(".boton-talle.activo");
-      const cantidad = parseInt(document.getElementById("cantidad").textContent);
+      try {
+        const nombre = document.querySelector(".producto-titulo").textContent.trim();
+        const precioTexto = document.querySelector(".producto-precio").textContent.trim();
+        const precio = parseFloat(precioTexto.replace(/\$/g, '').replace(/\./g, '').replace(',', '.'));
+        const imagen = document.querySelector(".imagen-producto")?.getAttribute("src") || "";
+        const talleActivo = document.querySelector(".boton-talle.activo");
+        const cantidad = parseInt(document.getElementById("cantidad").textContent);
 
-      if (!talleActivo) {
-        alert("Por favor, seleccioná un talle.");
-        return;
+        if (!talleActivo) {
+          alert("Por favor, seleccioná un talle.");
+          return;
+        }
+
+        const talle = talleActivo.textContent;
+        const carrito = obtenerCarrito();
+        const existente = carrito.find(item => item.nombre === nombre && item.talle === talle);
+
+        if (existente) {
+          existente.cantidad += cantidad;
+        } else {
+          carrito.push({ nombre, precio, imagen, talle, cantidad });
+        }
+
+        guardarCarrito(carrito);
+        actualizarCarritoUI();
+      } finally {
+        setTimeout(() => {
+          botonAgregar.textContent = textoOriginal;
+          botonAgregar.disabled = false;
+          mostrarToast("Producto agregado al carrito");
+        }, 1500);
       }
-
-      const talle = talleActivo.textContent;
-
-      const existente = carrito.find(
-        item => item.nombre === nombre && item.talle === talle
-      );
-
-      if (existente) {
-        existente.cantidad += cantidad;
-      } else {
-        carrito.push({ nombre, precio, imagen, talle, cantidad });
-      }
-
-      guardarCarrito();
-      actualizarCarritoUI();
-    } finally {
-      
-      setTimeout(() => {
-        botonAgregar.textContent = textoOriginal;
-        botonAgregar.disabled = false;
-        mostrarToast("Producto agregado al carrito");
-      }, 1500);
-    }
-  });
-}
-
-
-
-  function eliminarItem(index) {
-    carrito.splice(index, 1);
-    guardarCarrito();
-    actualizarCarritoUI();
+    });
   }
 
-  window.eliminarItemDelCarrito = eliminarItem;
+  function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+  }
 
-  function guardarCarrito() {
+  function guardarCarrito(carrito) {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
+
+  window.eliminarItemDelCarrito = function (index) {
+    const carrito = obtenerCarrito();
+    carrito.splice(index, 1);
+    guardarCarrito(carrito);
+    actualizarCarritoUI();
+  };
+
+  window.sumarCantidad = function (index) {
+    const carrito = obtenerCarrito();
+    carrito[index].cantidad++;
+    guardarCarrito(carrito);
+    actualizarCarritoUI();
+  };
+
+  window.restarCantidad = function (index) {
+    const carrito = obtenerCarrito();
+    if (carrito[index].cantidad > 1) {
+      carrito[index].cantidad--;
+    } else {
+      carrito.splice(index, 1);
+    }
+    guardarCarrito(carrito);
+    actualizarCarritoUI();
+  };
 
   function calcularPrecioEnvio(cp) {
     const cpNum = parseInt(cp);
@@ -85,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function actualizarCarritoUI() {
+    const carrito = obtenerCarrito();
     menuCarrito.innerHTML = `
       <div class="carrito-header">
         <span class="carrito-titulo">Carrito de compras.</span>
@@ -110,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <p class="item-nombre">${item.nombre} <span class="item-talle">(Talle ${item.talle})</span></p>
               <div class="item-cantidad-controles">
                 <button class="cantidad-btn" onclick="restarCantidad(${index})">−</button>
-                <span class="cantidad" id="cantidad">${item.cantidad}</span>
+                <span class="cantidad">${item.cantidad}</span>
                 <button class="cantidad-btn" onclick="sumarCantidad(${index})">+</button>
               </div>
             </div>
@@ -133,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="envio-texto">Medios de envío</span>
         <div class="envio-campo">
           <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal">
-          <button class="calcularEnvio-btn"id="calcularEnvio">Calcular</button>
+          <button class="calcularEnvio-btn" id="calcularEnvio">Calcular</button>
         </div>
         <div class="mensaje-envio" id="mensajeEnvio"></div>
       </div>
@@ -159,9 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const nuevoEnvio = calcularPrecioEnvio(cp);
-        localStorage.setItem("envio", costoEnvio);
+        localStorage.setItem("envio", nuevoEnvio);
         costoEnvio = nuevoEnvio;
-        guardarCarrito();
 
         mensaje.innerHTML = `
           <span>Costo de envío:</span>
@@ -172,29 +190,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  window.sumarCantidad = function (index) {
-    carrito[index].cantidad++;
-    guardarCarrito();
-    actualizarCarritoUI();
-  };
-
-  window.restarCantidad = function (index) {
-    if (carrito[index].cantidad > 1) {
-      carrito[index].cantidad--;
-    } else {
-      carrito.splice(index, 1);
-    }
-    guardarCarrito();
-    actualizarCarritoUI();
-  };
-
   function mostrarToast(mensaje) {
     const toast = document.getElementById("toast");
     toast.textContent = mensaje;
     toast.classList.add("mostrar");
-
     setTimeout(() => {
       toast.classList.remove("mostrar");
     }, 2500);
   }
+
+  window.actualizarCarritoUI = actualizarCarritoUI;
+  window.mostrarToast = mostrarToast;
 });

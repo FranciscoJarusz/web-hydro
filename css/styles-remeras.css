@@ -676,6 +676,7 @@ main {
 
 .boton-talle.activo {
   background-color: #e188e0;
+  border: 1px solid #e188e0;
   color: #fff;
 }
 

@@ -126,7 +126,7 @@
 
                 <div class="mensaje-no-encontrado">
 
-                    <span id="mensaje-busqueda"></span>
+                    <span class="mensaje-busqueda" id="mensaje-busqueda"></span>
                     <p>Escribilo de otra forma y volvé a intentar.</p>
 
                 </div>
@@ -152,15 +152,19 @@
         </div>
 
         <script>
-        const termino = localStorage.getItem("terminoBusqueda");
-        const mensaje = document.getElementById("mensaje-busqueda");
+            document.addEventListener("DOMContentLoaded", () => {
+                const termino = localStorage.getItem("terminoBusqueda");
+                const mensaje = document.getElementById("mensaje-busqueda");
 
-        if (termino) {
-            mensaje.textContent = `No encontramos nada para "${termino}"`;
-            localStorage.removeItem("terminoBusqueda");
-        } else {
-            mensaje.textContent = "No se encontró el producto buscado.";
-        }
+                if (mensaje) {
+                if (termino) {
+                    mensaje.textContent = `No encontramos nada para "${termino}"`;
+                    localStorage.removeItem("terminoBusqueda");
+                } else {
+                    mensaje.textContent = "No se encontró el producto buscado.";
+                }
+                }
+            });
         </script>
 
     </main>
@@ -186,13 +190,12 @@
 
     </footer>
 
-<script src="../js/busqueda.js"></script>    
+<script src="../js/busqueda.js"></script>
+<script src="../js/carritoDeCompras.js"></script>
 <script src="../js/product-card.js"></script>
 <script src="../js/cantidadTalle.js"></script>
 <script src="../js/menuDesplegable.js"></script>
-<script src="../js/carritoDeCompras.js"></script>
 <script src="../js/preloader.js"></script>
-
 </body>
 
 </html>
