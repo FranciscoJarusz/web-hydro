@@ -562,102 +562,6 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-/* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
-
-.cambiarContraseña-contenedor {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 40px 0;
-  margin-top: 80px;
-  max-width: 800px;
-  margin-left: 305px; 
-}
-
-.cambiarContraseña-detalles {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  border-radius: 20px;
-  color: #fff;
-  gap: 20px;
-  width: 100%;
-}
-
-.cambiarContraseña-categoria a, .cambiarContraseña-categoria span {
-  align-items: center;
-  font-size: 0.7rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.cambiarContraseña-categoria a:hover,
-.cambiarContraseña-categoria a:visited:hover {
-  color: #e188e0;
-}
-
-.titulo-cambiarContraseña {
-  font-family: 'Carattere', cursive;
-  font-size: 5rem;
-  font-weight: normal;
-}
-
-.formulario-inicio {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 420px;
-}
-
-.formulario-inicio label {
-  color: white;
-  font-size: 0.9rem;
-}
-
-.formulario-inicio input {
-  padding: 10px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  color: white;
-}
-
-.formulario-inicio input::placeholder {
-  color: #464545;
-}
-
-.formulario-inicio input:focus {
-  outline: none;
-  border: 1px solid #e188e0;
-}
-
-.formulario-inicio button {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
-  font-size: 0.9rem;
-  font-weight: bold;
-  width: 420px; 
-  text-align: center;
-  display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  padding: 10px 0;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.formulario-inicio button:hover {
-  background-color: #1f1e1e;
-}
-
-.olvidar-contraseña a,
-.olvidar-contraseña a:visited {
-  color: #e188e0;
-  font-size: 0.7rem;
-  text-decoration: none;
-}
-
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */
 
 footer {
@@ -696,6 +600,7 @@ footer#contacto {
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .footer-item i:hover {
