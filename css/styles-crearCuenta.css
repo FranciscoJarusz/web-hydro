@@ -695,9 +695,20 @@ footer#contacto {
 }
 
 .footer-item {
-  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
   text-align: center;
   margin-top: 15px;
+  gap: 10px;
+}
+
+.footer-item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  text-decoration: none;
 }
 
 .footer-item i {
@@ -705,15 +716,19 @@ footer#contacto {
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .footer-item i:hover {
   transform: scale(1.2);
 }
 
-footer .copyright {
+.copyright {
+  display: flex;
+  flex-direction: column;
   font-size: 0.9em;
   color: #FFFFFF;
+  gap: 10px;
 }
 
 .hecho-por a {
@@ -723,6 +738,7 @@ footer .copyright {
 
 .hecho-por a:hover,
 .hecho-por a:visited:hover {
+  cursor: pointer;
   color: #e188e0;
 }
 
