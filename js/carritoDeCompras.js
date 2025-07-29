@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         guardarCarrito(carrito);
         actualizarCarritoUI();
+        actualizarContadorCarrito();
+
       } finally {
         setTimeout(() => {
           botonAgregar.textContent = textoOriginal;
@@ -74,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     carrito.splice(index, 1);
     guardarCarrito(carrito);
     actualizarCarritoUI();
+    actualizarContadorCarrito();
   };
 
   window.sumarCantidad = function (index) {
@@ -81,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     carrito[index].cantidad++;
     guardarCarrito(carrito);
     actualizarCarritoUI();
+    actualizarContadorCarrito();
   };
 
   window.restarCantidad = function (index) {
@@ -92,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     guardarCarrito(carrito);
     actualizarCarritoUI();
+    actualizarContadorCarrito();
   };
 
   function calcularPrecioEnvio(cp) {
@@ -188,6 +193,9 @@ document.addEventListener("DOMContentLoaded", function () {
         totalTexto.textContent = `Total: $${(total + nuevoEnvio).toLocaleString('es-AR')}`;
       });
     }
+
+    actualizarContadorCarrito();
+
   }
 
   function mostrarToast(mensaje) {
@@ -199,6 +207,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2500);
   }
 
+  function actualizarContadorCarrito() {
+    const carrito = obtenerCarrito();
+    const totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+    const contador = document.getElementById("contadorCarrito");
+
+    if (totalCantidad > 0) {
+      contador.textContent = totalCantidad;
+      contador.style.display = "inline-block";
+    } else {
+      contador.style.display = "none";
+    }
+  }
+
+  window.actualizarContadorCarrito = actualizarContadorCarrito;
   window.actualizarCarritoUI = actualizarCarritoUI;
   window.mostrarToast = mostrarToast;
+
+  actualizarContadorCarrito();
 });

@@ -76,26 +76,22 @@ contenedor.addEventListener('click', (e) => {
   const botonTalle = e.target.closest('.boton-talle-panel');
   const botonAgregar = e.target.closest('.btn-agregar-carrito');
 
-  // Abrir panel
   if (botonComprar) {
     const tarjeta = botonComprar.closest('.producto');
     tarjeta.classList.toggle('panel-abierto');
   }
 
-  // Cerrar panel
   if (botonCerrar) {
     const tarjeta = botonCerrar.closest('.producto');
     tarjeta.classList.remove('panel-abierto');
   }
 
-  // Cambiar talle
   if (botonTalle) {
     const grupo = botonTalle.parentElement;
     grupo.querySelectorAll('.boton-talle-panel').forEach(b => b.classList.remove('activo'));
     botonTalle.classList.add('activo');
   }
 
-  // Agregar al carrito
   if (botonAgregar) {
     const tarjeta = botonAgregar.closest('.producto');
     const info = tarjeta.querySelector('.info-producto');
@@ -124,10 +120,16 @@ contenedor.addEventListener('click', (e) => {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    if (typeof actualizarCarritoUI === 'function') actualizarCarritoUI();
-    if (typeof mostrarToast === 'function') mostrarToast("Producto agregado al carrito");
+  if (typeof actualizarCarritoUI === 'function') actualizarCarritoUI();
 
-    // Cerrar panel con clase
+  if (typeof mostrarToast === 'function') {
+    setTimeout(() => {
+      mostrarToast("Producto agregado al carrito");
+      if (typeof actualizarContadorCarrito === 'function') {
+        actualizarContadorCarrito();
+      }
+    }, 300);
+  }
     tarjeta.classList.remove('panel-abierto');
   }
 });

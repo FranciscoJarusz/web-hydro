@@ -29,8 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnMas && cantidadEl) {
     btnMas.addEventListener('click', () => {
-      cantidad++;
-      cantidadEl.textContent = cantidad;
+      if (cantidad < 5) {
+        cantidad++;
+        cantidadEl.textContent = cantidad;
+      }
     });
   }
+  
+  actualizarCarritoUI();
 });
