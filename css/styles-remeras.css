@@ -60,6 +60,10 @@ main {
   flex-direction: column;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 /* ------------------------------------------------------------------ CONTENEDOR HEADER ------------------------------------------------------------------ */
 
 .header-conteiner {
@@ -437,6 +441,10 @@ main {
 }
 
 .calcularEnvio-btn {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: bold;
   background-color: #0f0f0f;
   color: #ffffff;
   border: 1px solid #464545;
@@ -593,24 +601,30 @@ main {
 .producto-descripcion-titulo {
   font-family: 'Carattere', cursive;
   color: #FFFFFF;
+  font-weight: normal;
   font-size: 5rem;
-  margin-bottom: -40px;
 }
 
 .medidas-talle {
+  width: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   color: #fff;
   display: flex;
   flex-direction: column;
+  text-wrap: wrap;
+  gap: 10px;
 }
 
 .tips-contenedor {
+  width: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   color: #fff;
   display: flex;
   flex-direction: column;
+  text-wrap: wrap;
+  gap: 10px;
 }
 
 .producto-detalles {
@@ -627,7 +641,7 @@ main {
 .producto-titulo {
   font-family: 'Carattere', cursive;
   font-size: 5rem;
-  margin-bottom: -20px;
+  font-weight: normal;
 }
 
 .producto-precio {
@@ -757,13 +771,26 @@ main {
   color: #fff;
 }
 
-.devolucion-titulo span{
-  color: #FFFFFF;
-  font-weight: bold;
+.devolucion-producto {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
-.devolucion-producto{
-  margin-top: 30px;
+.devolucion-titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.devolucion-titulo-texto {
+  margin-bottom: 4px;
+}
+
+.devolucion-descripcion {
+  margin-top: 0px;
+  width: 520px;
 }
 
 /* ------------------------------------------------------------------ FOOTER ------------------------------------------------------------------ */

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
           botonAgregar.textContent = textoOriginal;
           botonAgregar.disabled = false;
           mostrarToast("Producto agregado al carrito");
-        }, 1500);
+        }, 1000);
       }
     });
   }

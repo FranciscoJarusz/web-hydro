@@ -60,6 +60,10 @@ main {
   flex-direction: column;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 /* ------------------------------------------------------------------ CONTENEDOR HEADER ------------------------------------------------------------------ */
 
 .header-conteiner {
@@ -219,6 +223,28 @@ main {
 }
 
 /* ------------------------------------------------------------------ DISEÑO DE CARRITO ------------------------------------------------------------------ */
+
+.toast-oculto {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+  z-index: 9999;
+}
+
+.toast-oculto.mostrar {
+  opacity: 1;
+  bottom: 50px;
+  pointer-events: all;
+}
 
 .carrito-header {
   border-bottom: 1px solid #464545;
@@ -395,36 +421,41 @@ main {
 }
 
 .envio-campo {
-  position: relative;
   display: flex;
+  gap: 10px;
   align-items: center;
 }
 
 .envio-campo input {
-  width: 100%;
-  padding: 10px 40px 10px 10px;
+  flex: 1;
+  padding: 10px;
   border-radius: 20px;
   background-color: #0f0f0f;
   border: 1px solid #464545;
   color: white;
 }
 
-.envio-campo button {
-  position: absolute;
-  right: 15px;
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.envio-campo button:hover {
-  color: #e188e0;
-}
-
 .envio-campo input:focus {
   outline: none;
   border: 1px solid #e188e0;
+}
+
+.calcularEnvio-btn {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  border: 1px solid #464545;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.calcularEnvio-btn:hover {
+  background-color: #1f1e1e;
 }
 
 .total-final-contenedor {
@@ -571,8 +602,8 @@ main {
 
 .titulo-usuario {
   font-family: 'Carattere', cursive;
-  color: white;
-  font-size: 6rem;
+  font-size: 5rem;
+  font-weight: normal;
 }
 
 .formulario-inicio {
@@ -580,7 +611,6 @@ main {
   flex-direction: column;
   gap: 15px;
   max-width: 420px;
-  margin-top: 20px;
 }
 
 .formulario-inicio label {
