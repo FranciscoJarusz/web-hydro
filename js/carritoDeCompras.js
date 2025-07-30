@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const carrito = obtenerCarrito();
     menuCarrito.innerHTML = `
       <div class="carrito-header">
-        <span class="carrito-titulo">Carrito de compras.</span>
+        <h3 class="carrito-titulo">Carrito de compras</h3>
       </div>
     `;
 
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="envio-contenedor">
         <span class="envio-texto">Medios de envío</span>
         <div class="envio-campo">
-          <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal">
+          <input class="codigoPostal" type="text" id="codigoPostal" placeholder="Tu código postal" autocomplete="off">
           <button class="calcularEnvio-btn" id="calcularEnvio">Calcular</button>
         </div>
         <div class="mensaje-envio" id="mensajeEnvio"></div>
@@ -165,6 +165,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="total-final-contenedor">
         <span class="total-final-texto">Total (con envío):</span>
         <strong id="totalFinalTexto">$${(total + costoEnvio).toLocaleString('es-AR')}</strong>
+      </div>
+
+      <div class="confirmar-contenedor">
+        <button class="confirmar-btn" id="confirmarPedido">Confirmar pedido</button>
       </div>
     `;
 
@@ -194,8 +198,63 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    const btnConfirmar = document.getElementById("confirmarPedido");
+
+    if (btnConfirmar) {
+      btnConfirmar.addEventListener("click", () => {
+        mostrarResumenDePedido();
+      });
+    }
+
     actualizarContadorCarrito();
 
+  }
+
+  function mostrarResumenDePedido() {
+    const carrito = obtenerCarrito();
+    const envio = costoEnvio;
+    const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0) + envio;
+
+    menuCarrito.innerHTML = `
+      <div class="resumen-contenedor">
+        <div class="carrito-header">
+          <h3 class="carrito-titulo">Resumen del pedido</h3>
+        </div>
+        <div class="resumen-lista">
+          ${carrito.map(item => `
+            <div class="resumen-item">
+              <p>${item.nombre} <span class="item-talle">(Talle ${item.talle})</span> <strong>x${item.cantidad}</strong></p>
+              <p><strong>$${(item.precio * item.cantidad).toLocaleString('es-AR')}</strong></p>
+            </div>
+          `).join('')}
+        </div>
+        <div class="resumen-envio">
+          <p>Envío:</p>
+          <p><strong>$${envio.toLocaleString('es-AR')}</strong></p>
+        </div>
+        <div class="resumen-total">
+          <p>Total final:</p>
+          <p><strong>$${total.toLocaleString('es-AR')}</strong></p>
+        </div>
+        <div class="gracias-contenedor">
+          <p class="gracias-texto">¡Gracias por tu compra! Esperamos volver a verte.</p>
+          <button class="volver-btn" id="volverInicio">Volver a comprar</button>
+        </div>
+      </div>
+    `;
+
+    // Limpiar carrito
+    localStorage.removeItem("carrito");
+    localStorage.removeItem("envio");
+    costoEnvio = 0;
+    actualizarContadorCarrito();
+
+    const btnVolver = document.getElementById("volverInicio");
+    btnVolver.addEventListener("click", () => {
+      menuCarrito.classList.remove("activo");
+      overlay.classList.remove("activo");
+      actualizarCarritoUI();
+    });
   }
 
   function mostrarToast(mensaje) {

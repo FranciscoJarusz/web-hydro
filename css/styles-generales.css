@@ -282,7 +282,6 @@ h1, h2, h3, h4, h5, h6, p {
 .carrito-titulo {
   color: #FFFFFF;
   font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .carrito-vacio {
@@ -490,6 +489,70 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   justify-content: space-between;
   color: #FFFFFF;
+}
+
+.resumen-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;  
+}
+
+.resumen-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.confirmar-contenedor {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resumen-envio {
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+}
+
+.resumen-total {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+}
+
+.volver-btn,
+.confirmar-btn {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  border: 1px solid #464545;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.confirmar-btn:hover {
+  background-color: #e188e0;
+}
+
+.volver-btn:hover {
+  background-color: #1f1e1e;
+}
+
+.gracias-contenedor {
+  border-top: #464545 1px solid;
+  margin-top: 10px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* ------------------------------------------------------------------ BARRA DE BÚSQUEDA ------------------------------------------------------------------ */
