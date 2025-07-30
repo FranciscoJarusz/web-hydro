@@ -15,7 +15,7 @@
   flex-direction: column;
   padding: 0;
   border-radius: 20px;
-  color: #fff;
+  color: var(--color-blanco);
   gap: 20px;
   width: 100%;
 }
@@ -23,13 +23,13 @@
 .crearCuenta-categoria a, .crearCuenta-categoria span {
   align-items: center;
   font-size: 0.7rem;
-  color: #fff;
+  color: var(--color-blanco);
   text-decoration: none;
 }
 
 .crearCuenta-categoria a:hover,
 .crearCuenta-categoria a:visited:hover {
-  color: #e188e0;
+  color: var(--color-rosa);
 }
 
 .titulo-crearCuenta {
@@ -47,7 +47,7 @@
 }
 
 .formulario-inicio label {
-  color: white;
+  color: var(--color-blanco);
   font-size: 0.9rem;
 }
 
@@ -55,9 +55,9 @@
   padding: 10px;
   height: 40px;
   border-radius: 20px;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  color: white;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
+  color: var(--color-blanco);
 }
 
 .input-con-icono {
@@ -70,47 +70,47 @@
   width: 100%;
   padding: 10px 40px 10px 10px;
   border-radius: 20px;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  color: white;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
+  color: var(--color-blanco);
 }
 
 .input-con-icono i {
   position: absolute;
   right: 15px;
-  color: #ffffff;
+  color: var(--color-blanco);
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .input-con-icono i.activo {
-  color: #e188e0;
+  color: var(--color-rosa);
 }
 
 .formulario-inicio input::placeholder {
-  color: #464545;
+  color: var(--color-bordes);
 }
 
 .formulario-inicio input:focus {
   outline: none;
-  border: 1px solid #e188e0;
+  border: 1px solid var(--color-rosa);
 }
 
 .formulario-inicio button {
   font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
+  color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
   width: 420px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .formulario-inicio button:hover {
-  background-color: #1f1e1e;
+  background-color: var(--color-hover);
 }

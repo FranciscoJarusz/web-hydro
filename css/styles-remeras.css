@@ -38,7 +38,7 @@
   font-family: 'DM Serif Text', static;
   font-weight: normal;
   font-style: italic;
-  color: #FFFFFF;
+  color: var(--color-blanco);
   font-size: 5rem;
 }
 
@@ -46,7 +46,7 @@
   width: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--color-blanco);
   display: flex;
   flex-direction: column;
   text-wrap: wrap;
@@ -57,7 +57,7 @@
   width: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--color-blanco);
   display: flex;
   flex-direction: column;
   text-wrap: wrap;
@@ -70,7 +70,7 @@
   align-items: flex-start;
   padding: 30px;
   border-radius: 20px;
-  color: #fff;
+  color: var(--color-blanco);
   gap: 10px;
   min-width: 250px;
 }
@@ -90,7 +90,7 @@
 
 .anuncio-producto {  
   font-family: 'Montserrat', sans-serif;
-  color: #e188e0;
+  color: var(--color-rosa);
   font-size: 1rem;
   font-weight: bold;
   display: inline-flex;
@@ -113,28 +113,28 @@
 
 .boton-talle {
   font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
+  color: var(--color-blanco)FFF;
   font-size: 0.9rem;
   font-weight: bold;
   width: 100px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .boton-talle.activo {
-  background-color: #e188e0;
-  border: 1px solid #e188e0;
-  color: #fff;
+  background-color: var(--color-rosa);
+  border: 1px solid var(--color-rosa);
+  color: var(--color-blanco);
 }
 
 .boton-talle:not(.activo):hover {
-  background-color: #1f1e1e;
-  color: #fff;
+  background-color: var(--color-hover);
+  color: var(--color-blanco);
 }
 
 .botones-contenedor {
@@ -148,17 +148,17 @@
   display: flex;
   align-items: center;  
   justify-content: space-between;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;  
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);  
   border-radius: 20px;
   padding: 5px 10px;
-  color: #fff;
+  color: var(--color-blanco);
 }
 
 .cantidad-selector button {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-blanco);
   font-size: 20px;
   width: 30px;
   height: 30px;
@@ -172,41 +172,41 @@
 }
 
 .cantidad-selector button:hover {
-  color: #e188e0;
+  color: var(--color-rosa);
 }
 
 .boton-agregar {
   font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
+  color: var(--color-blanco)FFF;
   font-size: 0.9rem;
   font-weight: bold;
   width: 300px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .boton-agregar:hover {
-  background-color: #1f1e1e;
+  background-color: var(--color-hover);
 }
 
 .producto-categoria a, .producto-categoria span {
   align-items: center;
   font-size: 0.7rem;
-  color: #fff;
+  color: var(--color-blanco);
   text-decoration: none;
 }
 
 .producto-categoria a:hover,
 .producto-categoria a:visited:hover {
-  color: #e188e0;
+  color: var(--color-rosa);
 }
 .producto-categoria a:visited {
-  color: #fff;
+  color: var(--color-blanco);
 }
 
 .devolucion-producto {

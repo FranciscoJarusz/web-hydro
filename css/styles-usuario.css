@@ -29,7 +29,7 @@
 
 .usuario-categoria a:hover,
 .usuario-categoria a:visited:hover {
-  color: #e188e0;
+  color: var(--color-rosa);
 }
 
 .usuario-categoria a:visited {
@@ -51,7 +51,7 @@
 }
 
 .formulario-inicio label {
-  color: white;
+  color: var(--color-blanco);
   font-size: 0.9rem;
 }
 
@@ -59,9 +59,9 @@
   padding: 10px;
   height: 40px;
   border-radius: 20px;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  color: white;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
+  color: var(--color-blanco);
 }
 
 .input-con-icono {
@@ -74,9 +74,9 @@
   width: 100%;
   padding: 10px 40px 10px 10px;
   border-radius: 20px;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
-  color: white;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
+  color: var(--color-blanco);
 }
 
 .input-con-icono i {
@@ -88,15 +88,15 @@
 }
 
 .input-con-icono i.activo {
-  color: #e188e0;
+  color: var(--color-rosa);
 }
 .formulario-inicio input::placeholder {
-  color: #464545;
+  color: var(--color-bordes);
 }
 
 .formulario-inicio input:focus {
   outline: none;
-  border: 1px solid #e188e0;
+  border: 1px solid var(--color-rosa);
 }
 
 .formulario-inicio button {
@@ -107,20 +107,20 @@
   width: 420px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .formulario-inicio button:hover {
-  background-color: #1f1e1e;
+  background-color: var(--color-hover);
 }
 
 .olvidar-contraseña a,
 .olvidar-contraseña a:visited {
-  color: #e188e0;
+  color: var(--color-rosa);
   font-size: 0.7rem;
   text-decoration: none;
 }
@@ -132,6 +132,6 @@
 
 .crear-cuenta a,
 .crear-cuenta a:visited {
-  color: #e188e0;
+  color: var(--color-rosa);
   text-decoration: none;
 }

@@ -11,7 +11,7 @@
 .panel-titulo {
   font-size: 1.1rem;
   font-weight: 500;
-  color: white;
+  color: var(--color-blanco);
 }
 
 .panel-compra {
@@ -21,15 +21,15 @@
   right: 0;
   width: 100%;
   padding: 1rem;
-  background-color: #0f0f0f;
+  background-color: var(--color-fondo);
   border-radius: 20px 20px 0 0;
-  border-top: 1px solid #464545;
-  border-right: 1px solid #464545;
-  border-left: 1px solid #464545;
+  border-top: 1px solid var(--color-bordes);
+  border-right: 1px solid var(--color-bordes);
+  border-left: 1px solid var(--color-bordes);
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: var(--color-blanco);
   z-index: 10;
 
   transform: translateY(130%);
@@ -64,47 +64,47 @@
 }
 
 .boton-talle-panel {
-  color: #FFFFFF;
+  color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
   width: 100px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .panel-compra .talles .activo {
-  background: #e188e0;
-  color: white;
+  background: var(--color-rosa);
+  color: var(--color-blanco);
 }
 
 .btn-agregar-carrito {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
+  font-family: var(--fuente-primaria);
+  color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
   width: 210px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .btn-agregar-carrito:hover {
-  background-color: #1f1e1e;
+  background-color: var(--color-hover);
 }
 
 .btn-cerrar-panel {
   background: none;
   border: none;
-  color: white;
+  color: var(--color-blanco);
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -154,29 +154,29 @@
 }
 
 .texto-superior {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
-  color: #fff;
+  color: var(--color-blanco);
   font-size: 11rem;
   line-height: 1;
 }
 
 .texto-inferior {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   font-size: 2rem;
-  color: #fff;
+  color: var(--color-blanco);
 }
 
 /* ------------------------------------------------------------------ BANNER ENVIO ------------------------------------------------------------------ */
 
 .banner-seccion-index {
-  background-color: #e188e0;
+  background-color: var(--color-rosa);
   overflow: hidden;
   height: 40px;
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--color-blanco);
   font-size: 14px;
   white-space: nowrap;
 }
@@ -222,10 +222,10 @@
 }
 
 .titulo-productos {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
-  color: #fff;
+  color: var(--color-blanco);
   font-size: 7rem;
   text-align: center;
 }
@@ -277,10 +277,10 @@
 .info-producto {
   width: 100%;
   height: auto;
-  background-color: #0f0f0f;
-  border-left: 1px solid #464545;
-  border-right: 1px solid #464545;
-  border-bottom: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border-left: 1px solid var(--color-bordes);
+  border-right: 1px solid var(--color-bordes);
+  border-bottom: 1px solid var(--color-bordes);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -292,8 +292,8 @@
 }
 
 .nombre-producto {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
+  font-family: var(--fuente-primaria);
+  color: var(--color-blanco);
   font-weight: normal;
   font-size: 1.2rem;
   display: inline;
@@ -302,8 +302,8 @@
 }
 
 .precio-producto {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
+  font-family: var(--fuente-primaria);
+  color: var(--color-blanco);
   font-size: 1.2rem;
   display: inline;
   margin: 0;
@@ -315,8 +315,8 @@
 }
 
 .anuncio-producto {  
-  font-family: 'Montserrat', sans-serif;
-  color: #e188e0;
+  font-family: var(--fuente-primaria);
+  color: var(--color-rosa);
   font-size: 0.5rem;
   font-weight: bold;
   display: inline-flex;
@@ -331,15 +331,15 @@
 }
 
 .btn {  
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
+  font-family: var(--fuente-primaria);
+  color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
   width: 100px; 
   text-align: center;
   display: inline-block;
-  background-color: #0f0f0f;
-  border: 1px solid #464545;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-bordes);
   padding: 10px 0;
   border-radius: 20px;
   text-decoration: none;
@@ -348,5 +348,5 @@
 }
 
 .btn:hover {
-  background-color: #1f1e1e;
+  background-color: var(--color-hover);
 }
