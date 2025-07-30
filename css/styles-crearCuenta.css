@@ -33,9 +33,10 @@
 }
 
 .titulo-crearCuenta {
-  font-family: 'Carattere', cursive;
-  font-size: 5rem;
+  font-family: 'DM Serif Text', static;
   font-weight: normal;
+  font-style: italic;
+  font-size: 5rem;
 }
 
 .formulario-inicio {

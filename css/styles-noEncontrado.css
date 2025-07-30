@@ -172,10 +172,11 @@
 }
 
 .titulo-productos {
-  font-family: 'Carattere', cursive;
+  font-family: 'DM Serif Text', static;
+  font-weight: normal;
+  font-style: italic;
   font-size: 5rem;
   color: #ffffff;
-  font-weight: normal;
 }
 
 .productos-contenedor {
