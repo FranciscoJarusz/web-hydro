@@ -25,6 +25,7 @@
   font-size: 0.7rem;
   color: var(--color-blanco);
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .crearCuenta-categoria a:hover,
@@ -33,7 +34,7 @@
 }
 
 .titulo-crearCuenta {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
   font-size: 5rem;
@@ -58,6 +59,7 @@
   background-color: var(--color-fondo);
   border: 1px solid var(--color-bordes);
   color: var(--color-blanco);
+  transition: border 0.3s ease, transform 0.2s ease;
 }
 
 .input-con-icono {
@@ -73,14 +75,19 @@
   background-color: var(--color-fondo);
   border: 1px solid var(--color-bordes);
   color: var(--color-blanco);
+  transition: border 0.3s ease, transform 0.2s ease;
 }
 
 .input-con-icono i {
   position: absolute;
   right: 15px;
-  color: var(--color-blanco);
+  color: var(--color-bordes);
   cursor: pointer;
   transition: color 0.3s;
+}
+
+.input-con-icono i:hover{
+  color: var(--color-blanco)
 }
 
 .input-con-icono i.activo {
@@ -97,7 +104,7 @@
 }
 
 .formulario-inicio button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
@@ -109,6 +116,7 @@
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .formulario-inicio button:hover {

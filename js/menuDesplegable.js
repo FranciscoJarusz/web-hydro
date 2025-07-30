@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const overlayBlur = document.getElementById('overlayBlur');
 
     carrito.addEventListener('click', () => {
-    menuCarrito.classList.add('activo');
-    overlayBlur.classList.add('activo');
+        menuCarrito.classList.add('activo');
+        overlayBlur.classList.add('activo');
     });
 
     overlayBlur.addEventListener('click', () => {
-    menuCarrito.classList.remove('activo');
-    overlayBlur.classList.remove('activo');
+        menuCarrito.classList.remove('activo');
+        overlayBlur.classList.remove('activo');
     });
 });

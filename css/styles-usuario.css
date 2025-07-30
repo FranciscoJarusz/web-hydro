@@ -25,6 +25,7 @@
   font-size: 0.7rem;
   color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .usuario-categoria a:hover,
@@ -37,7 +38,7 @@
 }
 
 .titulo-usuario {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
   font-size: 5rem;
@@ -62,6 +63,7 @@
   background-color: var(--color-fondo);
   border: 1px solid var(--color-bordes);
   color: var(--color-blanco);
+  transition: border 0.3s ease, transform 0.2s ease;
 }
 
 .input-con-icono {
@@ -82,14 +84,20 @@
 .input-con-icono i {
   position: absolute;
   right: 15px;
-  color: #ccc;
+  color: var(--color-bordes);
   cursor: pointer;
   transition: color 0.3s;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.input-con-icono i:hover {
+  color: var(--color-blanco);
 }
 
 .input-con-icono i.activo {
   color: var(--color-rosa);
 }
+
 .formulario-inicio input::placeholder {
   color: var(--color-bordes);
 }
@@ -100,7 +108,7 @@
 }
 
 .formulario-inicio button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: #FFFFFF;
   font-size: 0.9rem;
   font-weight: bold;
@@ -112,6 +120,7 @@
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .formulario-inicio button:hover {

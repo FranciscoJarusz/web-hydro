@@ -117,6 +117,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .logo a {
@@ -147,6 +148,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .carro-compra {
@@ -163,6 +165,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contenedor-icono {
@@ -194,7 +197,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .logo:hover{
   cursor: pointer;
-  background-color: var(--color-fondo);
+  background-color: var(--color-hover);
 }
 
 .logo:hover .logo-img {
@@ -212,12 +215,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .usuario:hover{
   cursor: pointer;
-  background-color: var(--color-fondo);
+  background-color: var(--color-hover);
 }
 
 .carro-compra:hover{
   cursor: pointer;
-  background-color: var(--color-fondo);
+  background-color: var(--color-hover);
 }
 
 .usuario i, .carro-compra i {
@@ -389,11 +392,12 @@ h1, h2, h3, h4, h5, h6, p {
 .item-cantidad-controles button {
   background: none;
   border: none;
-  color: var(--color-blanco);
+  color: var(--color-bordes);
   font-size: 20px;
   width: 30px;
   height: 30px;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .cantidad {
@@ -402,8 +406,8 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 16px;
 }
 
-.item-cantidad-controles button:hover {
-  color: var(--color-rosa);
+.item-cantidad-controles button:hover{
+  color: var(--color-rosa)
 }
 
 .item-precio-info {
@@ -479,6 +483,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: var(--color-fondo);
   border: 1px solid var(--color-bordes);
   color: var(--color-blanco);
+  transition: border 0.3s ease, transform 0.2s ease;
 }
 
 .envio-campo input:focus {
@@ -498,10 +503,11 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 20px;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .calcularEnvio-btn:hover {
-  background-color: var(--color-fondo);
+  background-color: var(--color-hover);
 }
 
 .total-final-contenedor {
@@ -556,6 +562,7 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 20px;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .confirmar-btn:hover {
@@ -563,7 +570,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .volver-btn:hover {
-  background-color: var(--color-fondo);
+  background-color: var(--color-hover);
 }
 
 .gracias-contenedor {
@@ -621,6 +628,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-busqueda:hover {

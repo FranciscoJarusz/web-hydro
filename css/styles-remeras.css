@@ -35,7 +35,7 @@
 }
 
 .producto-descripcion-titulo {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
   color: var(--color-blanco);
@@ -44,7 +44,7 @@
 
 .medidas-talle {
   width: auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   font-size: 0.9rem;
   color: var(--color-blanco);
   display: flex;
@@ -55,7 +55,7 @@
 
 .tips-contenedor {
   width: auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   font-size: 0.9rem;
   color: var(--color-blanco);
   display: flex;
@@ -76,20 +76,20 @@
 }
 
 .producto-titulo {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
   font-size: 5rem;
 }
 
 .producto-precio {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   font-size: 2rem;
   font-weight: bold;
 }
 
 .anuncio-producto {  
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-rosa);
   font-size: 1rem;
   font-weight: bold;
@@ -100,7 +100,7 @@
 }
 
 .producto-anuncio {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   font-size: 1rem;
   margin-bottom: 30px;
 }
@@ -112,8 +112,8 @@
 }
 
 .boton-talle {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--color-blanco)FFF;
+  font-family: var(--fuente-primaria);
+  color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
   width: 100px; 
@@ -124,6 +124,7 @@
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-talle.activo {
@@ -158,11 +159,12 @@
 .cantidad-selector button {
   background: none;
   border: none;
-  color: var(--color-blanco);
+  color: var(--color-bordes);
   font-size: 20px;
   width: 30px;
   height: 30px;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .cantidad {
@@ -172,11 +174,15 @@
 }
 
 .cantidad-selector button:hover {
+  color: var(--color-blanco);
+}
+
+.cantidad-selector button:focus {
   color: var(--color-rosa);
 }
 
 .boton-agregar {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-blanco)FFF;
   font-size: 0.9rem;
   font-weight: bold;
@@ -188,6 +194,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-agregar:hover {
@@ -199,6 +206,7 @@
   font-size: 0.7rem;
   color: var(--color-blanco);
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .producto-categoria a:hover,

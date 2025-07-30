@@ -75,6 +75,11 @@
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-talle-panel:hover {
+  background-color: var(--color-hover);
 }
 
 .panel-compra .talles .activo {
@@ -83,7 +88,7 @@
 }
 
 .btn-agregar-carrito {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
@@ -95,6 +100,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-agregar-carrito:hover {
@@ -107,6 +113,11 @@
   color: var(--color-blanco);
   font-size: 1.2rem;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cerrar-panel:hover {
+  color: var(--color-bordes);
 }
 
 /* ------------------------------------------------------------------ NO ENCONTRADO ------------------------------------------------------------------ */
@@ -171,7 +182,7 @@
 }
 
 .titulo-productos {
-  font-family: 'DM Serif Text', static;
+  font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
   font-size: 5rem;
@@ -240,7 +251,7 @@
 }
 
 .nombre-producto {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-blanco);
   font-weight: normal;
   font-size: 1.2rem;
@@ -250,7 +261,7 @@
 }
 
 .precio-producto {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-blanco);
   font-size: 1.2rem;
   display: inline;
@@ -263,7 +274,7 @@
 }
 
 .anuncio-producto {  
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-rosa);
   font-size: 0.5rem;
   font-weight: bold;
@@ -279,7 +290,7 @@
 }
 
 .btn {  
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--fuente-primaria);
   color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;

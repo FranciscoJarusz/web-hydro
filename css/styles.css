@@ -75,6 +75,11 @@
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-talle-panel:hover {
+  background-color: var(--color-hover);
 }
 
 .panel-compra .talles .activo {
@@ -95,6 +100,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-agregar-carrito:hover {
@@ -107,6 +113,11 @@
   color: var(--color-blanco);
   font-size: 1.2rem;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cerrar-panel:hover {
+  color: var(--color-bordes);
 }
 
 /* ------------------------------------------------------------------ IMÁGEN PRINCIPAL ------------------------------------------------------------------ */
