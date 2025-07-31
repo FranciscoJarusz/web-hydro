@@ -97,3 +97,56 @@
   font-size: 0.7rem;
   text-decoration: none;
 }
+
+/* ----- RESPONSIVE GENERAL ----- */
+@media (max-width: 1024px) {
+  .cambiarContraseña-contenedor {
+    margin-left: 0;
+    padding: 40px 20px;
+    align-items: center;
+  }
+
+  .formulario-inicio {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .formulario-inicio button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-cambiarContraseña {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-cambiarContraseña {
+    font-size: 2rem;
+  }
+
+  .cambiarContraseña-contenedor {
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .formulario-inicio {
+    gap: 10px;
+  }
+
+  .formulario-inicio label {
+    font-size: 0.8rem;
+  }
+
+  .formulario-inicio input {
+    height: 36px;
+    padding: 8px;
+  }
+
+  .formulario-inicio button {
+    font-size: 0.8rem;
+    padding: 8px 0;
+  }
+}

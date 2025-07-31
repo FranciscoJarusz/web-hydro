@@ -32,60 +32,57 @@
       <img src="../img/whitelogo_hydro.webp" alt="Cargando..." class="logo-loader" />
     </div> 
 
-    <div class="header-conteiner">
+    <header class="header-contenedor">
 
-        <header>
-            
-            <div class="general-conteiner">
-            
-                <div class="logo">
+        <div class="header-general">
 
-                    <a href="../index.html">
-                        <img src="../img/whitelogo_hydro.webp" alt="Logo" class="logo-img">
-                    </a>
-                    
-                </div>
-
-                <a href="../pages/usuarioPage.html">
-                    
-                    <div class="usuario">
-                        <i class="fas fa-user" aria-label="Usuario"></i>
-                    </div>
-                    
+            <div class="header-logo">
+                <a href="../index.html">
+                <img src="../img/whitelogo_hydro.webp" alt="Logo" class="logo-img" />
                 </a>
-                
-                <div class="overlay-blur" id="overlayBlur"></div>               
-                <div class="carro-compra" id ="carrito">
-
-                    <i class="fas fa-shopping-cart" aria-label="Carrito de compra"></i>
-                    <p id="contadorCarrito" class="contador-carrito">0</p>
-       
-                </div>
-
-                <div class="menu-desplegable" id="menuCarrito"></div>
-
-                <div class="barra-busqueda">
-
-                    <form class="formulario-busqueda" id="formulario-busqueda">
-
-                        <input type="text" placeholder="¿Qué estas buscando?" class="input-busqueda" id="input-busqueda" autocomplete="off">
-
-                            <button type="submit" class="boton-busqueda">
-                                <i class="fas fa-search" aria-label="Boton de búsqueda"></i>
-                            </button>
-
-                    </form>
-
-                </div>
-                
             </div>
 
-            <div id="toast" class="toast-oculto">Producto agregado al carrito</div>
+            <div class="barra-busqueda">
+                <form id="formulario-busqueda" class="formulario-busqueda">
+                    <input type="text" id="input-busqueda" class="input-busqueda" placeholder="¿Qué estás buscando?" autocomplete="off" />
+                    <button type="submit" class="boton-busqueda">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
 
-        </header>
+            <div class="header-derecha">
+                <div class="iconos-header">
+                <div class="carro-compra" id="carrito">
+                    <div class="carro-compra-contenedor">
+                    <i class="fas fa-shopping-cart" aria-label="Carrito de compra"></i>
+                    <p id="contadorCarrito" class="contador-carrito">0</p>
+                    </div>
+                </div>
 
-    </div>
+                <a href="../pages/usuarioPage.html" class="usuario">
+                    <i class="fas fa-user"></i>
+                </a>
+                </div>
 
+                <div class="menu-hamburguesa" id="menu-hamburguesa">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="overlay-blur" id="overlayBlur"></div>   
+        <div class="menu-desplegable-principal" id="menu-desplegable-principal">
+            <ul>
+                <li id="menu-desplegable-carrito"><i class="fas fa-shopping-cart"></i> Carrito</li>
+                <li id="menu-desplegable-usuario"><i class="fas fa-user"></i> Usuario</li>
+            </ul>
+        </div>
+        <div class="menu-desplegable" id="menuCarrito"></div>
+        <div id="toast" class="toast-oculto">Producto agregado al carrito</div>
+
+    </header>
     <main>
 
         <section class="banner-seccion">

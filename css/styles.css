@@ -340,24 +340,3 @@
   display: flex;
   gap: 10px;
 }
-
-.btn {  
-  font-family: var(--fuente-primaria);
-  color: var(--color-blanco);
-  font-size: 0.9rem;
-  font-weight: bold;
-  width: 100px; 
-  text-align: center;
-  display: inline-block;
-  background-color: var(--color-fondo);
-  border: 1px solid var(--color-bordes);
-  padding: 10px 0;
-  border-radius: 20px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background-color: var(--color-hover);
-}

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   carritoIcon.addEventListener("click", () => {
     localStorage.removeItem("envio");
     costoEnvio = 0;
-
+    
     menuCarrito.classList.add("activo");
     overlay.classList.add("activo");
     actualizarCarritoUI();
@@ -112,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
     menuCarrito.innerHTML = `
       <div class="carrito-header">
         <h3 class="carrito-titulo">Carrito de compras</h3>
+        <button class="btn cerrar-carrito" id="cerrarCarrito" aria-label="Cerrar Carrito">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
     `;
 
@@ -171,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button class="confirmar-btn" id="confirmarPedido">Confirmar pedido</button>
       </div>
     `;
-
+    
     const btnCalcular = document.getElementById("calcularEnvio");
     const inputCP = document.getElementById("codigoPostal");
     const mensaje = document.getElementById("mensajeEnvio");
@@ -284,4 +287,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.mostrarToast = mostrarToast;
 
   actualizarContadorCarrito();
+
+  menuCarrito.addEventListener("click", (e) => {
+    if (e.target.id === "cerrarCarrito") {
+      menuCarrito.classList.remove("activo");
+      overlay.classList.remove("activo");
+    }
+  });
 });
