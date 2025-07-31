@@ -74,10 +74,21 @@
 
         <div class="overlay-blur" id="overlayBlur"></div>   
         <div class="menu-desplegable-principal" id="menu-desplegable-principal">
-            <ul>
-                <li id="menu-desplegable-carrito"><i class="fas fa-shopping-cart"></i> Carrito</li>
-                <li id="menu-desplegable-usuario"><i class="fas fa-user"></i> Usuario</li>
-            </ul>
+            <button class="btn cerrar-menu-principal" id="cerrarMenuPrincipal" aria-label="Cerrar Menu Principal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="contenido-menu-principal">
+                <ul>
+                    <li id="menu-desplegable-carrito">
+                        <span class="texto">Carrito</span>
+                        <span class="icono"><i class="fas fa-shopping-cart"></i></span>
+                    </li>
+                    <li id="menu-desplegable-usuario">                        
+                        <span class="texto">Usuario</span>
+                        <span class="icono"><i class="fas fa-user"></i></span>
+                    </li>
+                </ul>               
+            </div>
         </div>
         <div class="menu-desplegable" id="menuCarrito"></div>
         <div id="toast" class="toast-oculto">Producto agregado al carrito</div>
