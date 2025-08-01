@@ -44,9 +44,9 @@
                 </a>
             </div>
 
-            <div class="barra-busqueda">
-                <form id="formulario-busqueda" class="formulario-busqueda">
-                    <input type="text" id="input-busqueda" class="input-busqueda" placeholder="¿Qué estás buscando?" autocomplete="off" />
+            <div class="barra-busqueda barra-desktop">
+                <form class="formulario-busqueda">
+                    <input type="text" class="input-busqueda" placeholder="¿Qué estás buscando?" autocomplete="off" />
                     <button type="submit" class="boton-busqueda">
                         <i class="fas fa-search"></i>
                     </button>
@@ -71,45 +71,48 @@
 
             </div>
 
-            <div class="header-responsive-contenedor">
-
-                <div class="menu-busqueda-icono" id="menuBusquedaIcono">
-                    <i class="fas fa-search"></i>
-                </div>
-
-                <div class="menu-logo">
-                    <a href="../index.html">
-                        <img src="../img/whitelogo_hydro.webp" alt="Logo" class="menu-logo-img" />
-                    </a>
-                </div>
-
-                <div class="menu-hamburguesa" id="menu-hamburguesa">
-                    <i class="fas fa-bars"></i>
-                </div>   
-
             </div>
+
+        <div class="header-responsive-contenedor">
+
+            <div class="menu-logo">
+                <a href="../index.html">
+                    <img src="../img/whitelogo_hydro.webp" alt="Logo" class="menu-logo-img" />
+                </a>
+            </div>
+            
+            <div class="barra-busqueda barra-desktop">
+                <form class="formulario-busqueda">
+                    <input type="text" class="input-busqueda" placeholder="¿Qué estás buscando?" autocomplete="off" />
+                    <button type="submit" class="boton-busqueda">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="menu-hamburguesa" id="menu-hamburguesa">
+                    <i class="fas fa-bars"></i>
+            </div>   
 
         </div>
 
         <div class="overlay-blur" id="overlayBlur"></div> 
-
-        <div class="menu-desplegable-busqueda" id="menu-desplegable-busqueda">
-            <button class="btn cerrar-menu-busqueda" id="cerrarMenuBusqueda" aria-label="Cerrar Buscador">
-                <i class="fas fa-times"></i>
-            </button>
-            <form id="formulario-busqueda" class="formulario-busqueda">
-                <input type="text" id="input-busqueda" class="input-busqueda" placeholder="¿Qué estás buscando?" autocomplete="off" />
-                <button type="submit" class="boton-busqueda">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
 
         <div class="menu-desplegable-principal" id="menu-desplegable-principal">
             <button class="btn cerrar-menu-principal" id="cerrarMenuPrincipal" aria-label="Cerrar Menu Principal">
                 <i class="fas fa-times"></i>
             </button>
             <div class="contenido-menu-principal">
+
+                <div class="barra-busqueda barra-menu">
+                    <form class="formulario-busqueda">
+                        <input type="text" class="input-busqueda" placeholder="¿Qué estás buscando?" autocomplete="off" />
+                        <button type="submit" class="boton-busqueda">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
                 <ul>
                     <li id="menu-desplegable-carrito">
                         <span class="texto">Carrito</span>

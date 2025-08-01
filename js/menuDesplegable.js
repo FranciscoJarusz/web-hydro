@@ -5,8 +5,6 @@
         const menuDesplegablePrincipal = document.getElementById('menu-desplegable-principal');
         const menuHamburguesa = document.getElementById('menu-hamburguesa');
         const cerrarMenuPrincipal = document.getElementById('cerrarMenuPrincipal');
-        const menuDesplegableBusqueda = document.getElementById('menu-desplegable-busqueda');
-        const cerrarMenuBusqueda = document.getElementById('cerrarMenuBusqueda');
 
         carrito.addEventListener('click', () => {
             menuCarrito.classList.add('activo');
@@ -16,8 +14,6 @@
         overlayBlur.addEventListener('click', () => {
             menuCarrito.classList.remove('activo');
             overlayBlur.classList.remove('activo');
-            menuDesplegableBusqueda?.classList.remove('activo');
-            menuDesplegablePrincipal.classList.remove('activo');
         });
 
         if (cerrarMenuPrincipal) {
@@ -25,13 +21,6 @@
                 menuDesplegablePrincipal.classList.remove('activo');
                 overlayBlur.classList.remove('activo');
             });
-        }
-        
-        if (cerrarMenuBusqueda){
-            cerrarMenuBusqueda.addEventListener('click', () => {
-                menuDesplegableBusqueda.classList.remove('activo');
-                overlayBlur.classList.remove('activo');
-            });        
         }
 
         if (menuHamburguesa) {
@@ -43,11 +32,6 @@
 
         const menuDesplegableCarrito = document.getElementById('menu-desplegable-carrito');
         const menuDesplegableUsuario = document.getElementById('menu-desplegable-usuario');
-
-        menuBusquedaIcono?.addEventListener('click', () => {
-            menuDesplegableBusqueda.classList.add('activo');
-            overlayBlur.classList.add('activo');
-        });    
 
         menuDesplegableCarrito?.addEventListener('click', () => {
             menuDesplegablePrincipal.classList.remove('activo');

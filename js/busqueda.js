@@ -3,14 +3,11 @@ function normalizarTexto(texto) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, ""); 
+    .replace(/\s+/g, "");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const formularioBusqueda = document.getElementById('formulario-busqueda');
-  const inputBusqueda = document.getElementById('input-busqueda');
-
-  if (!formularioBusqueda || !inputBusqueda) return;
+  const formulariosBusqueda = document.querySelectorAll('.formulario-busqueda');
 
   const productos = [
     {
@@ -27,21 +24,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  formularioBusqueda.addEventListener('submit', (e) => {
-    e.preventDefault();
+  formulariosBusqueda.forEach(formulario => {
+    const inputBusqueda = formulario.querySelector('.input-busqueda');
 
-    const termino = normalizarTexto(inputBusqueda.value.trim());
+    formulario.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const producto = productos.find(p => {
-      const nombreNormalizado = normalizarTexto(p.nombre);
-      return nombreNormalizado.includes(termino);
+      const termino = normalizarTexto(inputBusqueda.value.trim());
+
+      const producto = productos.find(p => {
+        const nombreNormalizado = normalizarTexto(p.nombre);
+        return nombreNormalizado.includes(termino);
+      });
+
+      if (producto) {
+        window.location.href = producto.redireccionPagina;
+      } else {
+        localStorage.setItem("terminoBusqueda", termino);
+        window.location.href = "../pages/noEncontrado.html";
+      }
     });
-
-    if (producto) {
-      window.location.href = producto.redireccionPagina;
-    } else {
-      localStorage.setItem("terminoBusqueda", termino);
-      window.location.href = "../pages/noEncontrado.html";
-    }
   });
 });
