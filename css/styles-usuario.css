@@ -144,3 +144,88 @@
   color: var(--color-rosa);
   text-decoration: none;
 }
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 1024px ------------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+  .usuario-contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .titulo-usuario {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .formulario-inicio {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .formulario-inicio button {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 768px ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  .usuario-contenedor {
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .titulo-usuario {
+    font-size: 3rem;
+  }
+
+  .formulario-inicio label,
+  .formulario-inicio input,
+  .formulario-inicio button {
+    font-size: 0.85rem;
+  }
+
+  .formulario-inicio button {
+    padding: 10px;
+  }
+
+  .input-con-icono i {
+    right: 10px;
+  }
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 510px ------------------------------------------------------------------ */
+
+@media (max-width: 510px) {
+  .usuario-contenedor {
+    padding: 15px 10px;
+    gap: 20px;
+  }
+
+  .titulo-usuario {
+    font-size: 2.3rem;
+  }
+
+  .formulario-inicio label {
+    font-size: 0.8rem;
+  }
+
+  .formulario-inicio input {
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .formulario-inicio button {
+    font-size: 0.85rem;
+    padding: 10px 0;
+  }
+
+  .olvidar-contraseña a,
+  .crear-cuenta {
+    font-size: 0.65rem;
+    text-align: center;
+  }
+}

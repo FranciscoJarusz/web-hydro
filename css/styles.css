@@ -239,6 +239,7 @@
   color: var(--color-blanco);
   font-size: 5.2rem;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .productos-contenedor {
@@ -341,9 +342,8 @@
   gap: 10px;
 }
 
-/* ------------------ RESPONSIVE ------------------ */
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 1024px ------------------------------------------------------------------ */
 
-/* Tablets y laptops pequeñas (hasta 1024px) */
 @media (max-width: 1024px) {
 
   .imagen-fondo {
@@ -363,45 +363,14 @@
   }
 
   .producto {
-    width: 30%;
-  }
-
-  .info-producto {
-    padding: 20px;
-  }
-
-  .nombre-producto,
-  .precio-producto {
-    font-size: 1rem;
-  }
-  
-  .panel-compra {
-    padding: 1rem;
-  }
-
-  .botones-talle-panel {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .boton-talle-panel {
-    width: 45%;
-    padding: 8px;
-  }
-
-  .btn-agregar-carrito {
     width: 100%;
-  }
-
-  .botones-producto {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    max-width: 30vh;
   }
   
 }
 
-/* Tablets verticales (hasta 768px) */
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 768px ------------------------------------------------------------------ */
+
 @media (max-width: 768px) {
 
   .texto-superior {
@@ -412,46 +381,34 @@
     font-size: 0.7rem;
   }
 
-  .panel-compra {
-    padding: 1rem;
-  }
-
-  .botones-talle-panel {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .boton-talle-panel {
-    width: 45%;
-    padding: 8px 0;
-  }
-
-  .btn-agregar-carrito {
-    width: 100%;
-  }
-
   .titulo-productos {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
+  }
+
+  .productos-contenedor {
+    gap: 30px;
   }
 
   .producto {
     width: 100%;
-    max-width: 30vw;
+    max-width: 40vh;
+    height: 100%;
+    max-height: 60vh;
   }
 
+  .imagen-producto {
+    height: 300px;
+  }
+
+  .imagen-producto img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+  }
   .info-producto {
     padding: 15px;
     align-items: center;
     text-align: center;
-  }
-
-  .nombre-producto,
-  .precio-producto {
-    font-size: 1rem;
-  }
-
-  .anuncio-producto {
-    font-size: 0.6rem;
   }
 
   .imagen-fondo {
@@ -476,7 +433,8 @@
   }
 }
 
-/* Móviles pequeños (hasta 510px) */
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 510px ------------------------------------------------------------------ */
+
 @media (max-width: 510px) {
 
   .imagen-fondo {
@@ -501,8 +459,19 @@
 
   .producto {
     width: 100%;
-    max-width: 50vw;
-    height: 100vh;
+    max-width: 40vh;
+    height: 100%;
+    max-height: 60vh;
+  }
+
+  .imagen-producto {
+    height: 300px;
+  }
+
+  .imagen-producto img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
   }
 
   .boton-talle-panel {

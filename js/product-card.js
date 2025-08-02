@@ -30,7 +30,7 @@ const contenedor = document.getElementById('productos-contenedor');
 productos.forEach(producto => {
   const html = `
     <div class="producto">
-      <div class="imagen-producto" style="position: relative;">
+      <div class="imagen-producto">
         <img class="img-default" src="${producto.primeraImg}" alt="Imagen ${producto.nombre}">
         <img class="img-hover" src="${producto.segundaImg}" alt="Imagen ${producto.nombre}">
 
