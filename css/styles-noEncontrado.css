@@ -309,3 +309,140 @@
 .btn:hover {
   background-color: var(--color-hover);
 }
+
+/* -------------------------------------- RESPONSIVE DESIGN -------------------------------------- */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  .producto-contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 20px;
+  }
+
+  .productos-contenedor {
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .producto {
+    width: 220px;
+  }
+
+  .titulo-productos {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .btn-agregar-carrito {
+    width: 100%;
+  }
+}
+
+/* Móviles (pantallas pequeñas) */
+@media (max-width: 600px) {
+  .producto-contenedor {
+    margin-top: 40px;
+    padding: 20px 15px;
+  }
+
+  .productos-contenedor {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .producto {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .titulo-productos {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .panel-compra {
+    padding: 1rem 0.8rem;
+  }
+
+  .botones-talle-panel {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .boton-talle-panel {
+    width: 80px;
+    font-size: 0.8rem;
+  }
+
+  .btn-agregar-carrito {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .info-producto {
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .nombre-producto,
+  .precio-producto {
+    font-size: 1rem;
+  }
+
+  .anuncio-producto {
+    font-size: 0.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 10px 0;
+  }
+
+  .botones-producto {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .mensaje-no-encontrado span {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .mensaje-no-encontrado p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 400px) {
+
+  .producto-contenedor {
+    width: 50%;
+    height: 50%;
+  }
+
+  .titulo-productos {
+    font-size: 2.2rem;
+  }
+
+  .nombre-producto,
+  .precio-producto {
+    font-size: 0.95rem;
+  }
+
+  .boton-talle-panel {
+    width: 70px;
+    font-size: 0.75rem;
+  }
+
+  .btn-agregar-carrito {
+    font-size: 0.8rem;
+  }
+}

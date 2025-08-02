@@ -122,3 +122,72 @@
 .formulario-inicio button:hover {
   background-color: var(--color-hover);
 }
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 1024px ------------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+  .crearCuenta-contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 20px;
+    margin-top: 60px;
+  }
+
+  .formulario-inicio {
+    max-width: 100%;
+  }
+
+  .formulario-inicio button {
+    width: 100%;
+  }
+
+  .titulo-crearCuenta {
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 768px ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  .crearCuenta-contenedor {
+    gap: 30px;
+    margin-top: 40px;
+    padding: 20px 15px;
+  }
+
+  .titulo-crearCuenta {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .formulario-inicio label {
+    font-size: 0.85rem;
+  }
+
+  .formulario-inicio input {
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .input-con-icono i {
+    right: 10px;
+  }
+
+  .formulario-inicio button {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 510px ------------------------------------------------------------------ */
+
+@media (max-width: 510px) {
+  .titulo-crearCuenta {
+    font-size: 2.4rem;
+  }
+
+  .formulario-inicio button {
+    font-size: 0.8rem;
+  }
+}
