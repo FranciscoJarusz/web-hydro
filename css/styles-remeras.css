@@ -1,28 +1,35 @@
 /* ------------------------------------------------------------------ PRODUCTOS ------------------------------------------------------------------ */
 
-.producto-imagen-wrapper {
+.producto-contenedor {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 600px;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
+  padding: 40px;
+  margin-top: 40px;
 }
 
-.producto-contenedor {
+.producto-superior {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 40px;
-  padding: 100px;
-  margin-top: 80px;
+  gap: 60px;
+}
 
+.producto-inferior {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.producto-imagen-wrapper {
+  max-width: 600px;
 }
 
 .producto-imagen {
-  position: relative;
-  width: 600px;
-  height: 800px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,78 +37,46 @@
 
 .imagen-producto {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 20px;
-}
-
-.producto-descripcion-titulo {
-  font-family: var(--fuente-titulos);
-  font-weight: normal;
-  font-style: italic;
-  color: var(--color-blanco);
-  font-size: 5rem;
-}
-
-.medidas-talle {
-  width: auto;
-  font-family: var(--fuente-primaria);
-  font-size: 0.9rem;
-  color: var(--color-blanco);
-  display: flex;
-  flex-direction: column;
-  text-wrap: wrap;
-  gap: 10px;
-}
-
-.tips-contenedor {
-  width: auto;
-  font-family: var(--fuente-primaria);
-  font-size: 0.9rem;
-  color: var(--color-blanco);
-  display: flex;
-  flex-direction: column;
-  text-wrap: wrap;
-  gap: 10px;
 }
 
 .producto-detalles {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30px;
   border-radius: 20px;
   color: var(--color-blanco);
   gap: 10px;
   min-width: 250px;
+  max-width: 500px;
 }
 
 .producto-titulo {
   font-family: var(--fuente-titulos);
   font-weight: normal;
   font-style: italic;
+  width: 700px;
+  max-width: 100%;
   font-size: 5rem;
 }
 
 .producto-precio {
-  font-family: var(--fuente-primaria);
   font-size: 2rem;
   font-weight: bold;
 }
 
-.anuncio-producto {  
-  font-family: var(--fuente-primaria);
+.anuncio-producto {
   color: var(--color-rosa);
   font-size: 1rem;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
 }
 
 .producto-anuncio {
-  font-family: var(--fuente-primaria);
   font-size: 1rem;
   margin-bottom: 30px;
 }
@@ -113,24 +88,21 @@
 }
 
 .boton-talle {
-  font-family: var(--fuente-primaria);
-  color: var(--color-blanco);
   font-size: 0.9rem;
   font-weight: bold;
-  width: 100px; 
-  text-align: center;
-  display: inline-block;
+  width: 200px;
   background-color: var(--color-fondo);
   border: 1px solid var(--color-bordes);
   padding: 10px 0;
   border-radius: 20px;
   cursor: pointer;
+  color: var(--color-blanco);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-talle.activo {
   background-color: var(--color-rosa);
-  border: 1px solid var(--color-rosa);
+  border-color: var(--color-rosa);
   color: var(--color-blanco);
 }
 
@@ -148,13 +120,12 @@
 .cantidad-selector {
   width: 200px;
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: space-between;
   background-color: var(--color-fondo);
-  border: 1px solid var(--color-bordes);  
+  border: 1px solid var(--color-bordes);
   border-radius: 20px;
   padding: 5px 10px;
-  color: var(--color-blanco);
 }
 
 .cantidad-selector button {
@@ -183,18 +154,15 @@
 }
 
 .boton-agregar {
-  font-family: var(--fuente-primaria);
-  color: var(--color-blanco)FFF;
   font-size: 0.9rem;
   font-weight: bold;
-  width: 300px; 
-  text-align: center;
-  display: inline-block;
+  width: 300px;
   background-color: var(--color-fondo);
   border: 1px solid var(--color-bordes);
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  color: var(--color-blanco);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -203,19 +171,14 @@
 }
 
 .producto-categoria a, .producto-categoria span {
-  align-items: center;
   font-size: 0.7rem;
   color: var(--color-blanco);
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.3s ease;
 }
 
-.producto-categoria a:hover,
-.producto-categoria a:visited:hover {
+.producto-categoria a:hover {
   color: var(--color-rosa);
-}
-.producto-categoria a:visited {
-  color: var(--color-blanco);
 }
 
 .devolucion-producto {
@@ -237,5 +200,258 @@
 
 .devolucion-descripcion {
   margin-top: 0px;
-  width: 520px;
+  width: 100%;
+}
+
+.producto-descripcion-titulo {
+  font-family: var(--fuente-titulos);
+  color: var(--color-blanco);
+  font-weight: normal;
+  font-style: italic;
+  font-size: 5rem;
+}
+
+.medidas-talle,
+.tips-contenedor {
+  font-size: 0.9rem;
+  color: var(--color-blanco);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 1024px ------------------------------------------------------------------ */
+
+@media (max-width: 1024px) {
+
+  .producto-superior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 36px;
+  }
+
+  .producto-imagen-wrapper {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .producto-imagen {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .producto-detalles {
+    align-items: center;
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+    padding: 20px;
+    gap: 12px;
+    margin: 0 auto;
+  }
+
+  .producto-titulo {
+    width: 100%;
+  }
+
+  .botones-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .devolucion-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .boton-talle {
+    width: 300px;
+    gap: 8px;
+  }
+
+  .cantidad-selector {
+    width: 610px;
+  }
+
+  .boton-agregar {
+    width: 610px;
+  }
+  .producto-descripcion-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .devolucion-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  .devolucion-descripcion {
+    font-size: 12px;
+  }
+
+  .producto-descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 768px ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+  .producto-superior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 36px;
+  }
+
+  .producto-imagen-wrapper {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .producto-imagen {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .producto-detalles {
+    align-items: center;
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+    padding: 20px;
+    gap: 12px;
+    margin: 0 auto;
+  }
+
+  .producto-titulo {
+    font-size: 4rem;
+    width: 100%;
+  }
+
+  .botones-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .boton-talle {
+    width: 200px;
+    gap: 8px;
+  }
+
+  .cantidad-selector {
+    width: 400px;
+  }
+
+  .boton-agregar {
+    width: 400px;
+  }
+
+  .producto-descripcion-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .devolucion-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  .devolucion-descripcion {
+    font-size: 12px;
+  }
+
+  .producto-descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+}
+
+/* ------------------------------------------------------------------ RESPONSIVE HASTA 510px ------------------------------------------------------------------ */
+
+@media (max-width: 510px) {
+
+  .producto-contenedor {
+    padding: 30px;
+  }
+
+  .producto-titulo {
+    font-size: 2.2rem;
+    width: 300px;
+  }
+
+  .producto-precio {
+    font-size: 1.4rem;
+  }
+
+  .producto-descripcion-titulo {
+    font-size: 3rem;
+  }
+
+  .boton-talle {
+    width: 150px;
+    gap: 8px;
+  }
+
+  .cantidad-selector {
+    width: 300px;
+  }
+
+  .boton-agregar {
+    width: 300px;
+  }
+
+  .producto-descripcion-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .devolucion-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  .devolucion-descripcion {
+    font-size: 12px;
+  }
+
+  .producto-descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: balance;
+  }
 }
